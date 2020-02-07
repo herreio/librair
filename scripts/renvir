@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+rm -rf env/
+virtualenv -p python3 --no-site-packages env
+source env/bin/activate
+pip3 install -r requirements.txt

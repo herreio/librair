@@ -1,0 +1,11 @@
+# meta
+include LICENSE
+include MANIFEST.in
+include README.rst
+include requirements.txt
+
+# include local data like this:
+# `include librair/submodule/*.txt`
+
+# python byte code
+global-exclude *.pyc
