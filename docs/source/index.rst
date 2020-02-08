@@ -7,6 +7,7 @@ Welcome to librair's documentation!
    :maxdepth: 4
 
    reference
+   resources
 
 Indices and tables
 ==================
