@@ -1,6 +1,7 @@
 _*/
 dev.*
 *-dev.*
+secret.json
 
 # editor temp files
 *.swp
