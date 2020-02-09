@@ -7,7 +7,7 @@ Librair – Library Information Retrieval
 Introduction
 ------------
 
-This is a package for harvesting data from different library catalogs.
+This is a package (under development) for harvesting data from different library catalogs.
 
 Installation
 ------------
