@@ -8,14 +8,14 @@ def title(char):
     """
     get query for given title
     """
-    return "query=pica.tit" + quote("=") + char
+    return "pica.tit" + quote("=") + char
 
 
 def place(name):
     """
     get query for place given by name
     """
-    return "query=pica.plc" + quote("=") + name
+    return "pica.plc" + quote("=") + name
 
 
 def publisher(name):
