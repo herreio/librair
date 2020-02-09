@@ -13,7 +13,7 @@ setuptools.setup(
     author="Donatus Herre",
     author_email="pypi@herre.io",
     license="MIT",
-    description="Library Information Retrieval",
+    description="library information retrieval client (under development)",
     long_description=README,
     url="https://github.com/herreio/librair",
     packages=setuptools.find_packages(),
