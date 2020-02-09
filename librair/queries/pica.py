@@ -6,6 +6,7 @@ from urllib.parse import quote
 
 def title(char):
     """
+    get query for given title
     """
     return "query=pica.tit" + quote("=") + char
 
@@ -22,3 +23,13 @@ def publisher(name):
     get query for publisher given by name
     """
     return "pica.pub" + quote("=") + name
+
+
+def ort(name):
+    """
+    get query for place given by name
+
+    used by:
+        - hebis
+    """
+    return "pica.ort" + quote("") + name
