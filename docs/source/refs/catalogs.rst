@@ -46,6 +46,15 @@ gbv module
     :show-inheritance:
 
 
+hbz module
+-------------------
+
+.. automodule:: librair.catalogs.hbz
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
 hebis module
 -------------------
 
