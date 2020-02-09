@@ -4,10 +4,13 @@ Welcome to librair's documentation!
 ===================================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 1
 
-   reference
+   refs/catalogs
+   refs/protocols
+   refs/queries
    resources
+   refs/schemas
 
 Indices and tables
 ==================
