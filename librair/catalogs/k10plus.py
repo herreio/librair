@@ -18,5 +18,5 @@ def explain(store=False, path=""):
     if not store:
         xml.pretty(result)
     else:
-        file = xml.filepath("sru", "kobv", "", "")
+        file = xml.filepath("sru", "k10plus", "", "")
         xml.writer(result, file, path=path)
