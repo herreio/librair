@@ -5,7 +5,7 @@ include README.rst
 include requirements.txt
 
 # include local data like this:
-# `include librair/submodule/*.txt`
+include librair/assets/*.xml
 
 # python byte code
 global-exclude *.pyc

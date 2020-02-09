@@ -1,0 +1,383 @@
+<explainResponse xmlns="http://www.loc.gov/zing/srw/">
+  <version>1.1</version>
+  <record>
+    <recordSchema>http://explain.z3950.org/dtd/2.0/</recordSchema>
+    <recordPacking>xml</recordPacking>
+    <recordData>
+      <ns:explain xmlns:ns="http://explain.z3950.org/dtd/2.0/" id="Deutsche Nationalbibliothek">
+        <ns:serverInfo protocol="sru" version="1.1">
+          <ns:host>services.dnb.de</ns:host>
+          <ns:port>80</ns:port>
+          <ns:database>/sru/zdb</ns:database>
+        </ns:serverInfo>
+        <ns:databaseInfo>
+          <ns:title lang="de" primary="true">Zeitschriftendatenbank (ZDB)</ns:title>
+          <ns:author>Deutsche Nationalbibliothek</ns:author>
+          <ns:contact>sru-schnittstelle@dnb.de</ns:contact>
+          <ns:implementation version="1.1"/>
+        </ns:databaseInfo>
+        <ns:indexInfo>
+          <ns:set identifier="info:srw/cql-context-set/1/cql-v1.1" name="cql"/>
+          <ns:set identifier="http://www.d-nb.de/internal/cql/dnb-contextset" name="dnb"/>
+          <ns:set identifier="info:srw/cql-context-set/1/dc-v1.1" name="dc"/>
+          <ns:set identifier="info:srw/cql-context-set/1/sort-v1.0" name="sort"/>
+          <ns:index search="true" scan="false" sort="false" id="dnb.koeref">
+            <ns:title lang="de" primary="true">IDN der Koeperschaft</ns:title>
+            <ns:map>
+              <ns:name set="dnb">koeref</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.vort">
+            <ns:title lang="de" primary="true">Verlagsort</ns:title>
+            <ns:map>
+              <ns:name set="dnb">vort</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.successorsof">
+            <ns:title lang="de" primary="true">Nachfolger</ns:title>
+            <ns:map>
+              <ns:name set="dnb">successorsof</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.ejl">
+            <ns:title lang="de" primary="true">Erscheinungsjahr (letztes)</ns:title>
+            <ns:map>
+              <ns:name set="dnb">ejl</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.maintitlesof">
+            <ns:title lang="de" primary="true">Beilage zu</ns:title>
+            <ns:map>
+              <ns:name set="dnb">maintitlesof</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.voz">
+            <ns:title lang="de" primary="true">Verbreitungsort [ZDB]</ns:title>
+            <ns:map>
+              <ns:name set="dnb">voz</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="true" id="dnb.eje">
+            <ns:title lang="de" primary="true">Erscheinungsjahr (erstes)</ns:title>
+            <ns:map>
+              <ns:name set="dnb">eje</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.dcz">
+            <ns:title lang="de" primary="true">DDC-Sachgruppe [ZDB]</ns:title>
+            <ns:map>
+              <ns:name set="dnb">dcz</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.evl">
+            <ns:title lang="de" primary="true">Erscheinungsverlauf</ns:title>
+            <ns:map>
+              <ns:name set="dnb">evl</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.erf">
+            <ns:title lang="de" primary="true">Erscheinungsfrequenz</ns:title>
+            <ns:map>
+              <ns:name set="dnb">erf</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.woe">
+            <ns:title lang="de" primary="true">Alle Begriffe</ns:title>
+            <ns:map>
+              <ns:name set="dnb">woe</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="dc">any</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="cql">anywhere</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="cql">serverchoice</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="dnb">any</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.iss">
+            <ns:title lang="de" primary="true">ISSN [ZDB]</ns:title>
+            <ns:map>
+              <ns:name set="dnb">iss</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.supplementsof">
+            <ns:title lang="de" primary="true">Enthaltene Beilagen</ns:title>
+            <ns:map>
+              <ns:name set="dnb">supplementsof</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.ssg">
+            <ns:title lang="de" primary="true">Sondersammelgebiet [ZDB]</ns:title>
+            <ns:map>
+              <ns:name set="dnb">ssg</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.num">
+            <ns:title lang="de" primary="true">Nummer</ns:title>
+            <ns:map>
+              <ns:name set="dnb">num</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="dnb">identifier</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="dnb">isbn</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="dc">identifier</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.koe">
+            <ns:title lang="de" primary="true">Koerperschaft/Organisation</ns:title>
+            <ns:map>
+              <ns:name set="dnb">koe</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.isil">
+            <ns:title lang="de" primary="true">ISIL [ZDB]</ns:title>
+            <ns:map>
+              <ns:name set="dnb">isil</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.fid">
+            <ns:title lang="de" primary="true">FID-Kennzeichen [ZDB]</ns:title>
+            <ns:map>
+              <ns:name set="dnb">fid</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.zdbid">
+            <ns:title lang="de" primary="true">ZDB-ID [ZDB]</ns:title>
+            <ns:map>
+              <ns:name set="dnb">zdbid</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.predecessorsof">
+            <ns:title lang="de" primary="true">Vorg&#228;nger</ns:title>
+            <ns:map>
+              <ns:name set="dnb">predecessorsof</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.kfr">
+            <ns:title lang="de" primary="true">online kostenfrei verf&#252;gbar</ns:title>
+            <ns:map>
+              <ns:name set="dnb">kfr</ns:name>
+            </ns:map>
+            <ns:configInfo>
+              <ns:supports type="value">1</ns:supports>
+            </ns:configInfo>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.spr">
+            <ns:title lang="de" primary="true">Sprachencode</ns:title>
+            <ns:map>
+              <ns:name set="dnb">spr</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.idn">
+            <ns:title lang="de" primary="true">Interner DNB-Idenitfier</ns:title>
+            <ns:map>
+              <ns:name set="dnb">idn</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.sigel">
+            <ns:title lang="de" primary="true">Sigel</ns:title>
+            <ns:map>
+              <ns:name set="dnb">sigel</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.bbi">
+            <ns:title lang="de" primary="true">Bestandsbesitzende Institution</ns:title>
+            <ns:map>
+              <ns:name set="dnb">bbi</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.ver">
+            <ns:title lang="de" primary="true">Verlag</ns:title>
+            <ns:map>
+              <ns:name set="dnb">ver</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="dc">publisher</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.frm">
+            <ns:title lang="de" primary="true">Medientyp</ns:title>
+            <ns:map>
+              <ns:name set="dnb">frm</ns:name>
+            </ns:map>
+            <ns:configInfo>
+              <ns:supports type="value">A</ns:supports>
+              <ns:supports type="value">S</ns:supports>
+              <ns:supports type="value">E</ns:supports>
+              <ns:supports type="value">O</ns:supports>
+              <ns:supports type="value">C</ns:supports>
+              <ns:supports type="value">kt</ns:supports>
+              <ns:supports type="value">nt</ns:supports>
+              <ns:supports type="value">tt</ns:supports>
+              <ns:supports type="value">mt</ns:supports>
+              <ns:supports type="value">vi</ns:supports>
+            </ns:configInfo>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="true" id="dnb.tit">
+            <ns:title lang="de" primary="true">Titel</ns:title>
+            <ns:map>
+              <ns:name set="dnb">tit</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="dc">title</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="dnb">title</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.cpl">
+            <ns:title lang="de" primary="true">Codes f&#252;r Paket- und Lizenzverwaltung</ns:title>
+            <ns:map>
+              <ns:name set="dnb">cpl</ns:name>
+            </ns:map>
+            <ns:configInfo>
+              <ns:supports type="value">ad</ns:supports>
+              <ns:supports type="value">al</ns:supports>
+              <ns:supports type="value">nk</ns:supports>
+              <ns:supports type="value">nl</ns:supports>
+              <ns:supports type="value">pt</ns:supports>
+            </ns:configInfo>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.per">
+            <ns:title lang="de" primary="true">Person</ns:title>
+            <ns:map>
+              <ns:name set="dnb">per</ns:name>
+            </ns:map>
+            <ns:map>
+              <ns:name set="dc">contributor</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.sgn">
+            <ns:title lang="de" primary="true">Signatur [ZDB]</ns:title>
+            <ns:map>
+              <ns:name set="dnb">sgn</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.ela">
+            <ns:title lang="de" primary="true">Codes Erscheinungsland [ZDB]</ns:title>
+            <ns:map>
+              <ns:name set="dnb">ela</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.tst">
+            <ns:title lang="de" primary="true">Vollst&#228;ndiger Titel</ns:title>
+            <ns:map>
+              <ns:name set="dnb">tst</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.perref">
+            <ns:title lang="de" primary="true">IDN der Person</ns:title>
+            <ns:map>
+              <ns:name set="dnb">perref</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.paralleleditionsof">
+            <ns:title lang="de" primary="true">Parallelausgaben</ns:title>
+            <ns:map>
+              <ns:name set="dnb">paralleleditionsof</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.psg">
+            <ns:title lang="de" primary="true">Produkt-ISIL/-sigel</ns:title>
+            <ns:map>
+              <ns:name set="dnb">psg</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.vozref">
+            <ns:title lang="de" primary="true">IDN des Verbreitungsortes</ns:title>
+            <ns:map>
+              <ns:name set="dnb">vozref</ns:name>
+            </ns:map>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.dok">
+            <ns:title lang="de" primary="true">Format (Dokumenttyp)</ns:title>
+            <ns:map>
+              <ns:name set="dnb">dok</ns:name>
+            </ns:map>
+            <ns:configInfo>
+              <ns:supports type="value">Zeitschrift</ns:supports>
+              <ns:supports type="value">Serie</ns:supports>
+              <ns:supports type="value">Zeitung</ns:supports>
+            </ns:configInfo>
+          </ns:index>
+          <ns:index search="true" scan="false" sort="false" id="dnb.eid">
+            <ns:title lang="de" primary="true">Exemplar-ID</ns:title>
+            <ns:map>
+              <ns:name set="dnb">eid</ns:name>
+            </ns:map>
+          </ns:index>
+        </ns:indexInfo>
+        <ns:schemaInfo>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.loc.gov/MARC21/slim" location="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd" name="MARC21plus-1-xml">
+            <ns:title lang="de" primary="true">XML-Variante von MARC21 inkl. Exemplardaten (MARC-924) / ZDB-Titeldaten</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.w3.org/1999/02/22-rdf-syntax-ns" location="http://www.w3.org/2000/07/rdf.xsd" name="BibframeRDFxml"/>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.w3.org/1999/02/22-rdf-syntax-ns" location="http://www.w3.org/2000/07/rdf.xsd" name="RDFprov-xml">
+            <ns:title lang="de" primary="true">PicaPlus to RDF Provenance Konversion / DNB Titeldaten</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.crossref.org/schema/4.4.0" location="https://www.crossref.org/schema/crossref4.4.0.xsd" name="crossref-xml">
+            <ns:title lang="de" primary="true">Auswahl von in Crossref enthaltenen JATS-Elementen / DNB-intern</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://jats.nlm.nih.gov/publishing/1.0" location="http://jats.nlm.nih.gov/publishing/1.0/xsd/JATS-journalpublishing.xsd" name="JATS-xml">
+            <ns:title lang="de" primary="true">Auswahl von JATS-Elementen / DNB-intern</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.ddb.de/professionell/MARC21/plus" location="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd" name="MARC21plus-xml">
+            <ns:title lang="de" primary="true">XML-Variante von MARC21 inkl. ausgew&#228;hlter Inhalte von Exemplardaten / ZDB-Titeldaten</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.oclcpica.org/xmlns/ppxml-1.0" location="http://www.oclcpica.org/xmlns/ppxml-1.0.xsd" name="PicaPlus-xml">
+            <ns:title lang="de" primary="true">XML-Variante von PicaPlus / Bibliotheksadressen / DNB-intern, Bibliotheksverb&#252;nde</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.w3.org/1999/02/22-rdf-syntax-ns" location="http://www.w3.org/2000/07/rdf.xsd" name="RDFxml">
+            <ns:title lang="de" primary="true">PicaPlus to RDF Konversion / DNB Titeldaten, ZDB-Titeldaten, Normdaten</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.openarchives.org/OAI/2.0/oai_dc" location="http://www.openarchives.org/OAI/2.0/oai_dc.xsd" name="oai_dc">
+            <ns:title lang="de" primary="true">Auswahl von Dublin-Core-Elementen / DNB-Titeldaten, ZDB-Titeldaten</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.d-nb.de/schemas/syncrepo" location="http://files.dnb.de/standards/formate/syncrepo.xsd" name="sync-repo-xml">
+            <ns:title lang="de" primary="true">Statusinformationen f&#252;r Repository</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://oai.base-search.net/base_dc" location="http://oai.base-search.net/base_dc/base_dc.xsd" name="baseDc-xml">
+            <ns:title lang="de" primary="true">Auswahl von Base-Dc-Elementen / DNB-intern</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.d-nb.de/standards/xMetaDiss/" location="http://www.d-nb.de/standards/xmetadiss/xmetadiss.xsd" name="xMetaDiss">
+            <ns:title lang="de" primary="true">xMetaDiss f&#252;r Hochschulschriften / DNB-intern</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.loc.gov/mods/v3" location="http://www.loc.gov/standards/mods/v3/mods-3-6.xsd" name="mods-xml">
+            <ns:title lang="de" primary="true">Metadata Object Description Schema</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.loc.gov/MARC21/slim" location="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd" name="MARC21-xml">
+            <ns:title lang="de" primary="true">XML-Variante von MARC21 / DNB-Titeldaten, ZDB-Titeldaten, Normdaten</ns:title>
+          </ns:schema>
+          <ns:schema retrieve="true" sort="false" identifier="http://www.editeur.org/onix/2.1/short/ONIX_BookProduct_Release2.1_short" location="http://www.editeur.org/onix/2.1/short/ONIX_BookProduct_Release2.1_short.xsd" name="ONIX-xml">
+            <ns:title lang="de" primary="true">Auswahl von ONIX-Elementen / DNB-intern</ns:title>
+          </ns:schema>
+        </ns:schemaInfo>
+        <ns:configInfo>
+          <ns:default type="numberOfRecords">10</ns:default>
+          <ns:default type="retrieveSchema">oai_dc</ns:default>
+          <ns:supports type="relation">=</ns:supports>
+          <ns:supports type="relation">&lt;</ns:supports>
+          <ns:supports type="relation">&lt;=</ns:supports>
+          <ns:supports type="relation">&gt;</ns:supports>
+          <ns:supports type="relation">&gt;=</ns:supports>
+          <ns:supports type="relation">all</ns:supports>
+          <ns:supports type="relation">any</ns:supports>
+          <ns:supports type="relation">within</ns:supports>
+          <!--sorting settings (CQL Context Set Version 1.2)-->
+          <ns:supports type="sort"/>
+          <ns:supports type="sortModifier">sort.ascending</ns:supports>
+          <ns:supports type="sortModifier">sort.descending</ns:supports>
+        </ns:configInfo>
+      </ns:explain>
+    </recordData>
+  </record>
+</explainResponse>

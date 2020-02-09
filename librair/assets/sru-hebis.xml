@@ -1,0 +1,200 @@
+<?xml-stylesheet type="text/xsl" href="http://cbsopac.rz.uni-frankfurt.de/sru/?xsl=explainresponse" ?>
+<srw:explainResponse xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:zr="http://explain.z3950.org/dtd/2.0/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/">
+    <srw:version>1.1</srw:version>
+    <srw:record>
+        <srw:recordPacking>xml</srw:recordPacking>
+	<srw:recordSchema>http://explain.z3950.org/dtd/2.0/</srw:recordSchema>
+	<srw:recordData>
+	    <zr:explain>
+		<zr:serverInfo protocol="SRU" version="1.1">
+		    <host>cbsopac.rz.uni-frankfurt.de</host> 
+		    <port/>
+		    <database>/sru/DB=2.1</database> 
+		</zr:serverInfo>
+		<zr:databaseInfo>
+		    <title lang="du" primary="true">HeBIS SRU-Schnittstelle: HeBIS-Verbundkatalog</title>
+		    <description lang="du" primary="true"><P>Im HeBIS-Verbundkatalog sind die Best&#228;nde (B&#252;cher, Zeitschriften, Online-Publikationen, Aufs&#228;tze, Mikrofilme, Karten, Noten, CD-ROMs, Tontr&#228;ger etc.) der HeBIS-Teilnehmerbiblotheken nachgewiesen.</P></description>
+		</zr:databaseInfo>
+
+	<indexInfo> 
+		<indexSet name="cql" identifier="info:srw/cql-context-set/1/cql-v1.1"/> 
+		<indexSet name="pica" identifier="info:srw/cql-context-set/5/pica-v1.0"/>
+		<index>
+			<title>Abrufzeichen (ABR)</title>
+			<map><name indexSet="pica">abr</name></map>
+		</index>
+		<index>
+			<title>Datum der letzten &#196;nderung (AED)</title>
+			<map><name indexSet="pica">aed</name></map>
+		</index>
+		<index>
+			<title>Alles ohne Inhaltsverzeichnisse (ALL)</title>
+			<map><name indexSet="pica">all</name></map>
+		</index>
+		<index>
+			<title>ISBN (ISB)</title>
+			<map><name indexSet="pica">isb</name></map>
+		</index>
+		<index>
+			<title>ISMN (ISM)</title>
+			<map><name indexSet="pica">ism</name></map>
+		</index>
+		<index>
+			<title>ISNN (ISS)</title>
+			<map><name indexSet="pica">iss</name></map>
+		</index>
+		<index>
+			<title>K&#246;rperschaften und Konferenzen, wortweise (KOR)</title>
+			<map><name indexSet="pica">kor</name></map>
+		</index>
+		<index>
+			<title>K&#246;rperschaften und Konferenzen, Phrase (KOS)</title>
+			<map><name indexSet="pica">kos</name></map>
+		</index>
+		<index>
+			<title>Lizenzindikator (LZI)</title>
+			<map><name indexSet="pica">lzi</name></map>
+		</index>
+		<index>
+			<title>Materialart (MAA)</title>
+			<map><name indexSet="pica">maa</name></map>
+		</index>
+		<index>
+			<title>Orte (ORT)</title>
+			<map><name indexSet="pica">ort</name></map>
+		</index>
+		<index>
+			<title>Pica-Produktionsnummer (PPN)</title>
+			<map><name indexSet="pica">ppn</name></map>
+		</index>
+		<index>
+			<title>Personennamen (PRS)</title>
+			<map><name indexSet="pica">prs</name></map>
+		</index>
+		<index>
+			<title>Provenienz-Angaben (PRV)</title>
+			<map><name indexSet="pica">prv</name></map>
+		</index>
+		<index>
+			<title>Verlag, Vertrieb, Hersteller, Ort (PUB)</title>
+			<map><name indexSet="pica">pub</name></map>
+		</index>
+		<index>
+			<title>RVK-Notation (RVP)</title>
+			<map><name indexSet="pica">rvp</name></map>
+		</index>
+		<index>
+			<title>Satzart (SAA)</title>
+			<map><name indexSet="pica">saa</name></map>
+		</index>
+		<index>
+			<title>Datum der Ersterfassung (SER)</title>
+			<map><name indexSet="pica">ser</name></map>
+		</index>
+		<index>
+			<title>SSG-Angaben auf Titelebene und FID-Kennzeichen (SGN)</title>
+			<map><name indexSet="pica">sgn</name></map>
+		</index>
+		<index>
+			<title>Sachgruppen der Deutschen Nationalbibliothek (SGT)</title>
+			<map><name indexSet="pica">sgt</name></map>
+		</index>
+		<index>
+			<title>ZDB-Notation (SGZ)</title>
+			<map><name indexSet="pica">sgz</name></map>
+		</index>
+		<index>
+			<title>Schlagw&#246;rter, Phrase (SP)</title>
+			<map><name indexSet="pica">sp</name></map>
+		</index>
+		<index>
+			<title>Schlagw&#246;rter, wortweise (SW)</title>
+			<map><name indexSet="pica">sw</name></map>
+		</index>
+		<index>
+			<title>Teilbestandskennzeichen (TBK)</title>
+			<map><name indexSet="pica">tbk</name></map>
+		</index>
+		<index>
+			<title>Teile von monografischen Reihen und mehrteiligen Monografien (TGW)</title>
+			<map><name indexSet="pica">tgw</name></map>
+		</index>
+		<index>
+			<title>Titel, Phrase (TIS)</title>
+			<map><name indexSet="pica">tis</name></map>
+		</index>
+		<index>
+			<title>Titel, wortweise (TIT)</title>
+			<map><name indexSet="pica">tit</name></map>
+		</index>
+		<index>
+			<title>Verlag, Vertrieb, Hersteller (VRL)</title>
+			<map><name indexSet="pica">vrl</name></map>
+		</index>
+		<index>
+			<title>W&#246;chentliche Verzeichnis-Nummer (WVN)</title>
+			<map><name indexSet="pica">wvn</name></map>
+		</index>
+		<index>
+			<title>ZDB-Nummer (ZDB)</title>
+			<map><name indexSet="pica">zdb</name></map>
+		</index>
+	</indexInfo> 
+
+	    <schemaInfo>
+		<schema identifier="http://www.loc.gov/MARC21/slim" location="http://www.loc.gov/standards/marcxml/MARC21slim.xsd" sort="true" retrieve="true" name="marc21"> 
+		    <title>Marc21</title> 
+		</schema>
+		<schema uri="" sort="true" retrieve="true" name="pica"> 
+		    <title>Pica+</title> 
+		</schema> 
+	    </schemaInfo> 
+
+	    <sortkeyInfo>
+		<sortkey uri="" sort="true" retrieve="true" name="LST_Y,pica,0,,"> 
+		    <title>Erscheinungsjahr</title> 
+		</sortkey>
+		<sortkey uri="" sort="true" retrieve="true" name="LST_atY,pica,0,,"> 
+		    <title>Autor</title> 
+		</sortkey>
+		<sortkey uri="" sort="true" retrieve="true" name="LST_tY,pica,0,,"> 
+		    <title>Titel</title> 
+		</sortkey>
+	    </sortkeyInfo>
+	   <configInfo>
+                
+                <default type="numberOfRecords">10</default>
+
+                
+                <default type="indexSet">pica</default>
+
+                
+                <default type="index">pica.all</default>
+
+                
+                <default type="relation">=</default>
+
+                
+                <default type="sortSchema">pica</default>
+
+                
+                <default type="retrieveSchema">marc21</default>
+
+                
+                <default type="sortCaseSensitive">false</default>
+                
+                <default type="sortAscending">true</default>
+                <default type="stylesearch">http://cbsopac.rz.uni-frankfurt.de/sru/?xsl=searchRetrieveResponse</default>
+                <default type="stylescan">http://cbsopac.rz.uni-frankfurt.de/sru/?xsl=scanResponse</default>
+
+                
+                <setting type="maximumRecords">1000</setting>
+                
+                <supports type="proximity"/>
+                <supports type="resultsets"/>
+                <supports type="utf-8"/>
+            </configInfo>
+	</zr:explain>
+     </srw:recordData>
+  </srw:record>
+</srw:explainResponse>
