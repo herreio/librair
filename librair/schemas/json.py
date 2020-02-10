@@ -26,7 +26,7 @@ def writer(data, file, path="res"):
     """
     write given dict data to json file at path
     """
-    if not os.path.exists(path):
+    if path and not os.path.exists(path):
         os.makedirs(path)
     out = os.path.join(path, file)
     with open(out, 'w', encoding="utf-8") as f:

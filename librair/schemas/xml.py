@@ -59,7 +59,7 @@ def writer(tree, file, path="res"):
     """
     parser = etree.XMLParser(remove_blank_text=True)
     xml = etree.ElementTree(tree, parser=parser)
-    if not os.path.exists(path):
+    if path and not os.path.exists(path):
         os.makedirs(path)
     out = os.path.join(path, file)
     # keep xml response unmodified
