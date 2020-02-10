@@ -1,15 +1,6 @@
 Catalogs
 ========
 
-bsz module
--------------------
-
-.. automodule:: librair.catalogs.bsz
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
 bvb module
 -------------------
 
@@ -46,6 +37,15 @@ gbv module
     :show-inheritance:
 
 
+gnd module
+-------------------
+
+.. automodule:: librair.catalogs.gnd
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
 hbz module
 -------------------
 
@@ -59,6 +59,15 @@ hebis module
 -------------------
 
 .. automodule:: librair.catalogs.hebis
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+isil module
+-------------------
+
+.. automodule:: librair.catalogs.isil
     :members:
     :undoc-members:
     :show-inheritance:
@@ -95,6 +104,15 @@ mdz module
 -------------------
 
 .. automodule:: librair.catalogs.mdz
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+swb module
+-------------------
+
+.. automodule:: librair.catalogs.swb
     :members:
     :undoc-members:
     :show-inheritance:
