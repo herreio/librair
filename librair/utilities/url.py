@@ -7,10 +7,14 @@ from urllib.parse import quote
 def param(name, value, encode=False):
     """
     """
-    if not encode:
-        return name + "=" + value
-    else:
-        return name + quote("=") + value
+    return "{0}={1}".format(name, value) if not encode \
+        else quote("{0}={1}".format(name, value))
+
+
+def add_params(url, query):
+    """
+    """
+    return "{0}?{1}".format(url, query)
 
 
 def join_params(params):
@@ -19,13 +23,7 @@ def join_params(params):
     return "&".join(params)
 
 
-def add_params(url, query):
+def join_paths(paths):
     """
     """
-    return "?".join([url, query])
-
-
-def join_dirs(dirs):
-    """
-    """
-    return "/".join(dirs)
+    return "/".join(paths)
