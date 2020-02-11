@@ -10,6 +10,15 @@ bvb module
     :show-inheritance:
 
 
+cerl module
+-------------------
+
+.. automodule:: librair.catalogs.cerl
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
 ddb module
 -------------------
 
