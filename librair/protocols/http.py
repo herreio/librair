@@ -4,13 +4,6 @@
 import requests
 from ..schemas import xml
 
-urlenc = {
-  " ": "%20",
-  "=": "%3D",
-  ">=": "%3E%3D",
-  "=<": "%3D%3C"
-}
-
 
 def get_request(url, headers={}):
     """

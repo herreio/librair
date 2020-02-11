@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import requests
-
-from lxml import etree
+from . import http
 
 # ////////////////////// #
 # /// URL PARAMETERS /// #
@@ -90,5 +88,5 @@ def retrieve(url):
     """
     send request to given url and return xml response
     """
-    response = requests.get(url)
-    return etree.fromstring(response.content)
+    response = http.get_request(url)
+    return http.response_xml(response)
