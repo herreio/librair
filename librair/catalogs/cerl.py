@@ -13,9 +13,9 @@ def _entity(idx, format, style):
     request entitiy by given idx in specified format and style
     """
     _url = "/".join([THESAURUS, idx])
-    _params = url.new_param("format", format)
+    _params = url.param("format", format)
     if style:
-        _style = url.new_param("style", style)
+        _style = url.param("style", style)
         _params = url.join_params([_params, _style])
         if style == "internal":
             _params = url.join_params([_params, "pretty"])
