@@ -1,7 +1,11 @@
-_*/
+# api keys
+secret.json
+
+# development files / folders
+_/
+dev/
 dev.*
 *-dev.*
-secret.json
 
 # editor temp files
 *.swp
