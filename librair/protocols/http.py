@@ -44,7 +44,7 @@ def response_xml(response):
     """
     if response.status_code == 200:
         parser = xml.etree.XMLParser(remove_blank_text=True)
-        return xml.etree.fromstring(response.text, parser=parser)
+        return xml.etree.fromstring(response.content, parser=parser)
     else:
         print("something went wrong!")
         print("http status code: ",
