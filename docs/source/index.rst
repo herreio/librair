@@ -9,7 +9,6 @@ Welcome to librair's documentation!
    refs/catalogs
    refs/protocols
    refs/queries
-   resources
    refs/schemas
 
 Indices and tables
