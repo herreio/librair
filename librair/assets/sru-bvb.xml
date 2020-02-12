@@ -5,50 +5,66 @@
     <zs:recordPacking>xml</zs:recordPacking>
     <zs:recordData>
       <explain xmlns="http://explain.z3950.org/dtd/2.0/">
-      <serverInfo>
-        <host>bvbr.bib-bvb.de</host>
-        <port>9991</port>
-        <database>bvb01sru</database>
-      </serverInfo>
-      <indexInfo>
-        <set identifier="info:srw/cql-context-set/1/cql-v1.1" name="cql"/>
-        <set identifier="info:srw/cql-context-set/1/dc-v1.1" name="dc"/>
-        <set identifier="http://zing.z3950.org/cql/bath/2.0/" name="bath"/>
-        <set identifier="info:srw/schema/1/marcxml-1.1" name="marcxml"/>
-        <index id="4">
-          <title>title</title>
-          <map><name set="marcxml">marcxml.title</name></map>
-        </index>
-        <index id="1003">
-          <title>creator</title>
-          <map><name set="marcxml">marcxml.creator</name></map>
-        </index>
-        <index id="2007">
-          <title>gndid</title>
-          <map><name set="marcxml">marcxml.gndid</name></map>
-        </index>
-        <index id="46">
-          <title>subject</title>
-          <map><name set="marcxml">marcxml.subject</name></map>
-        </index>
-        <index id="7">
-          <title>isbn</title>
-          <map><name set="marcxml">marcxml.isbn</name></map>
-        </index>
-        <index id="48">
-          <title>identifier</title>
-          <map><name set="marcxml">marcxml.identifier</name></map>
-        </index>
-        <index id="12">
-          <title>rec.id</title>
-          <map><name set="marcxml">rec.id</name></map>
-        </index>
-        <index id="53">
-          <title>idn</title>
-          <map><name set="marcxml">marcxml.idn</name></map>
-        </index>
-        </indexInfo>  
-    </explain>
+        <serverInfo>
+          <host>bvbr.bib-bvb.de</host>
+          <port>9991</port>
+          <database>bvb01sru</database>
+        </serverInfo>
+        <indexInfo>
+          <set identifier="info:srw/cql-context-set/1/cql-v1.1" name="cql"/>
+          <set identifier="info:srw/cql-context-set/1/dc-v1.1" name="dc"/>
+          <set identifier="http://zing.z3950.org/cql/bath/2.0/" name="bath"/>
+          <set identifier="info:srw/schema/1/marcxml-1.1" name="marcxml"/>
+          <index id="4">
+            <title>title</title>
+            <map>
+              <name set="marcxml">marcxml.title</name>
+            </map>
+          </index>
+          <index id="1003">
+            <title>creator</title>
+            <map>
+              <name set="marcxml">marcxml.creator</name>
+            </map>
+          </index>
+          <index id="2007">
+            <title>gndid</title>
+            <map>
+              <name set="marcxml">marcxml.gndid</name>
+            </map>
+          </index>
+          <index id="46">
+            <title>subject</title>
+            <map>
+              <name set="marcxml">marcxml.subject</name>
+            </map>
+          </index>
+          <index id="7">
+            <title>isbn</title>
+            <map>
+              <name set="marcxml">marcxml.isbn</name>
+            </map>
+          </index>
+          <index id="48">
+            <title>identifier</title>
+            <map>
+              <name set="marcxml">marcxml.identifier</name>
+            </map>
+          </index>
+          <index id="12">
+            <title>rec.id</title>
+            <map>
+              <name set="marcxml">rec.id</name>
+            </map>
+          </index>
+          <index id="53">
+            <title>idn</title>
+            <map>
+              <name set="marcxml">marcxml.idn</name>
+            </map>
+          </index>
+        </indexInfo>
+      </explain>
     </zs:recordData>
   </zs:record>
 </zs:explainResponse>

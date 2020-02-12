@@ -1,0 +1,1583 @@
+<zs:explainResponse xmlns:zs="http://docs.oasis-open.org/ns/search-ws/sruResponse">
+  <zs:version>2.0</zs:version>
+  <zs:record>
+    <zs:recordSchema>http://explain.z3950.org/dtd/2.0/</zs:recordSchema>
+    <zs:recordXMLEscaping>xml</zs:recordXMLEscaping>
+    <zs:recordData>
+      <explain xmlns="http://explain.z3950.org/dtd/2.0/">
+        <serverInfo protocol="SRU" version="1.1">
+          <host>0.0.0.0</host>
+          <port>8210</port>
+          <database>swb</database>
+        </serverInfo>
+        <databaseInfo>
+          <title lang="en" primary="true">Online Katalog des SWB</title>
+          <description lang="en" primary="true">GBV database</description>
+          <author>Verbundzentrale des GBV (VZG)</author>
+          <contact>gbv@gbv.de</contact>
+          <extent>Gemeinsamer Bibliotheksverbund (GBV)</extent>
+          <langUsage codes="du ge en fr">Records are in Dutch, German, English, French and other languages</langUsage>
+        </databaseInfo>
+        <indexInfo>
+          <set name="cql" identifier="info:srw/cql-context-set/1/cql-v1.1"/>
+          <set name="pica" identifier="info:srw/cql-context-set/5/pica-v1.0"/>
+          <set name="dc" identifier="info:srw/cql-context-set/1/dc-v1.1"/>
+          <index>
+            <title>Suche &#252;ber alles [ALL]</title>
+            <map>
+              <name set="pica">all</name>
+            </map>
+          </index>
+          <index>
+            <title>Titel (Stichwort) [TIT]</title>
+            <map>
+              <name set="pica">tit</name>
+            </map>
+          </index>
+          <index>
+            <title>Titel (Stichwort) [TIT]</title>
+            <map>
+              <name set="dc">title</name>
+            </map>
+          </index>
+          <index>
+            <title>Exakter Titel (Phrase) [TST]</title>
+            <map>
+              <name set="pica">tst</name>
+            </map>
+          </index>
+          <index>
+            <title>Teil e. mehrbdg. Werkes oder Serie [TMB]</title>
+            <map>
+              <name set="pica">tmb</name>
+            </map>
+          </index>
+          <index>
+            <title>Inhaltsverzeichnisse, Abstracts, Rezensionen [IHZ]</title>
+            <map>
+              <name set="pica">ihz</name>
+            </map>
+          </index>
+          <index>
+            <title>Inhaltsverzeichnisse, Abstracts, Rezensionen [IHZ]</title>
+            <map>
+              <name set="dc">description</name>
+            </map>
+          </index>
+          <index>
+            <title>Schlagwort (Stichwortsuche)[SW]</title>
+            <map>
+              <name set="pica">sw</name>
+            </map>
+          </index>
+          <index>
+            <title>Schlagwortkette (direkter Einstieg in Register) [SKT]</title>
+            <map>
+              <name set="pica">skt</name>
+            </map>
+          </index>
+          <index>
+            <title>RVK-Notation [RVN]</title>
+            <map>
+              <name set="pica">rvn</name>
+            </map>
+          </index>
+          <index>
+            <title>Sonstige Notationen (z.B. DDC,MSC,LCC) [SYS]</title>
+            <map>
+              <name set="pica">sys</name>
+            </map>
+          </index>
+          <index>
+            <title>Musik: Besetzung, Form + Gattung [BEP]</title>
+            <map>
+              <name set="pica">bep</name>
+            </map>
+          </index>
+          <index>
+            <title>Person(Phrase: Nachname, Vorname) [PER]</title>
+            <map>
+              <name set="pica">per</name>
+            </map>
+          </index>
+          <index>
+            <title>Person (Stichwort) [PST]</title>
+            <map>
+              <name set="pica">pst</name>
+            </map>
+          </index>
+          <index>
+            <title>Organisationen, Veranstaltungen, Geografika(Stichwort) [KOR]</title>
+            <map>
+              <name set="pica">kor</name>
+            </map>
+          </index>
+          <index>
+            <title>Organisationen, Veranstaltungen, Geografika (Phrase)[KSK]</title>
+            <map>
+              <name set="pica">ksk</name>
+            </map>
+          </index>
+          <index>
+            <title>Ort,Verlag (Stichwort) [VER]</title>
+            <map>
+              <name set="pica">ver</name>
+            </map>
+          </index>
+          <index>
+            <title>Nummern allg. (ISBN,ISSN,ISMN...) [NUM]</title>
+            <map>
+              <name set="pica">num</name>
+            </map>
+          </index>
+          <index>
+            <title>GND-Nummer, Suche nach verkn&#252;pften Titeln [GND]</title>
+            <map>
+              <name set="pica">gnd</name>
+            </map>
+          </index>
+          <index>
+            <title>PICA Prod.-Nr. [PPN]</title>
+            <map>
+              <name set="pica">ppn</name>
+            </map>
+          </index>
+          <index>
+            <title>PICA Prod.-Nr. [PPN]</title>
+            <map>
+              <name set="dc">resourceidentifier</name>
+            </map>
+          </index>
+          <index>
+            <title>SWB-Identnummer [SWN]</title>
+            <map>
+              <name set="pica">swn</name>
+            </map>
+          </index>
+          <index>
+            <title>ISBN [ISB]</title>
+            <map>
+              <name set="pica">isb</name>
+            </map>
+          </index>
+          <index>
+            <title>ISSN [ISS]</title>
+            <map>
+              <name set="pica">iss</name>
+            </map>
+          </index>
+          <index>
+            <title>LoC-Nummer</title>
+            <map>
+              <name set="pica">lcn</name>
+            </map>
+          </index>
+          <index>
+            <title>BNB-Nummer</title>
+            <map>
+              <name set="pica">bnb</name>
+            </map>
+          </index>
+          <index>
+            <title>LoC-Classification</title>
+            <map>
+              <name set="pica">lcc</name>
+            </map>
+          </index>
+          <index>
+            <title>MESH [MSH]</title>
+            <map>
+              <name set="pica">msh</name>
+            </map>
+          </index>
+          <index>
+            <title>LC Subject Heading [LSH]</title>
+            <map>
+              <name set="pica">lsh</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokale Schlagw&#246;rter (Stichwort)[LSW]</title>
+            <map>
+              <name set="pica">lsw</name>
+            </map>
+          </index>
+          <index>
+            <title>Titelschl&#252;ssel (4/2/2/1)</title>
+            <map>
+              <name set="pica">tsl</name>
+            </map>
+          </index>
+          <index>
+            <title>ZDB-Nummer [ZDB]</title>
+            <map>
+              <name set="pica">zdb</name>
+            </map>
+          </index>
+          <index>
+            <title>DB-Nummer [DBN]</title>
+            <map>
+              <name set="pica">dbn</name>
+            </map>
+          </index>
+          <index>
+            <title>Sprachcode [SPR]</title>
+            <map>
+              <name set="pica">spr</name>
+            </map>
+          </index>
+          <index>
+            <title>Sprachcode [SPR]</title>
+            <map>
+              <name set="dc">language</name>
+            </map>
+          </index>
+          <index>
+            <title>Erscheinungsort [VLO]</title>
+            <map>
+              <name set="pica">vlo</name>
+            </map>
+          </index>
+          <index>
+            <title>Stichworte aus Abstracts, Rezensionen [ZSA]</title>
+            <map>
+              <name set="pica">zsa</name>
+            </map>
+          </index>
+          <index>
+            <title>Volltext (Dokumenttyp) [IHD]</title>
+            <map>
+              <name set="pica">ihd</name>
+            </map>
+          </index>
+          <index>
+            <title>Volltext (Herkunft/Lieferant)[IHE]</title>
+            <map>
+              <name set="pica">ihe</name>
+            </map>
+          </index>
+          <index>
+            <title>Volltext (Verfasser d. Abstracts, Rezensionen etc.)[ZUP]</title>
+            <map>
+              <name set="pica">zup</name>
+            </map>
+          </index>
+          <index>
+            <title>Person, Autor [PNE]</title>
+            <map>
+              <name set="pica">pne</name>
+            </map>
+          </index>
+          <index>
+            <title>Person, Autor [PNE]</title>
+            <map>
+              <name set="dc">author</name>
+            </map>
+          </index>
+          <index>
+            <title>Person, Autor [PNE]</title>
+            <map>
+              <name set="dc">creator</name>
+            </map>
+          </index>
+          <index>
+            <title>Organisation (Stichwort)[KOE]</title>
+            <map>
+              <name set="pica">koe</name>
+            </map>
+          </index>
+          <index>
+            <title>Veranstaltung (Stichwort) [KON]</title>
+            <map>
+              <name set="pica">kon</name>
+            </map>
+          </index>
+          <index>
+            <title>Inhaltsverzeichnisse, Abstracts, Rezensionen[TXT]</title>
+            <map>
+              <name set="pica">txt</name>
+            </map>
+          </index>
+          <index>
+            <title>Autor oder Urheber(Stichwort)[GPK]</title>
+            <map>
+              <name set="pica">gpk</name>
+            </map>
+          </index>
+          <index>
+            <title>VerbundID der erstkatalog. Institution</title>
+            <map>
+              <name set="pica">vkz</name>
+            </map>
+          </index>
+          <index>
+            <title>[ISM]</title>
+            <map>
+              <name set="pica">ism</name>
+            </map>
+          </index>
+          <index>
+            <title>[ISR]</title>
+            <map>
+              <name set="pica">isr</name>
+            </map>
+          </index>
+          <index>
+            <title>DB-WV-Nummer [WVN]</title>
+            <map>
+              <name set="pica">wvn</name>
+            </map>
+          </index>
+          <index>
+            <title>Nummer e. umgelenkten Satzes [NUX]</title>
+            <map>
+              <name set="pica">nux</name>
+            </map>
+          </index>
+          <index>
+            <title>Identnr. weiterer Fremddatenlief.[SNR]</title>
+            <map>
+              <name set="pica">snr</name>
+            </map>
+          </index>
+          <index>
+            <title>PND-Nummer [PND]</title>
+            <map>
+              <name set="pica">pnd</name>
+            </map>
+          </index>
+          <index>
+            <title>GKD-Nummer [GKD]</title>
+            <map>
+              <name set="pica">gkd</name>
+            </map>
+          </index>
+          <index>
+            <title>SWD-Nummer [SWD]</title>
+            <map>
+              <name set="pica">swd</name>
+            </map>
+          </index>
+          <index>
+            <title>ZKA-Nummer [ZKA]</title>
+            <map>
+              <name set="pica">zka</name>
+            </map>
+          </index>
+          <index>
+            <title>LCA-Nummer [LCA]</title>
+            <map>
+              <name set="pica">lca</name>
+            </map>
+          </index>
+          <index>
+            <title>Sonstige Standardnummern [STN]</title>
+            <map>
+              <name set="pica">stn</name>
+            </map>
+          </index>
+          <index>
+            <title>Bibliographische Zitate [FSV]</title>
+            <map>
+              <name set="pica">fsv</name>
+            </map>
+          </index>
+          <index>
+            <title>Einheitssachtitel (Stichwort) [TIE]</title>
+            <map>
+              <name set="pica">tie</name>
+            </map>
+          </index>
+          <index>
+            <title>Hauptsachtitel (Stichwort) [TIH]</title>
+            <map>
+              <name set="pica">tih</name>
+            </map>
+          </index>
+          <index>
+            <title>Zusatz zum Hauptsachtitel (Stichwort) [TIZ]</title>
+            <map>
+              <name set="pica">tiz</name>
+            </map>
+          </index>
+          <index>
+            <title>HST e. Gesamtaufnahme [TMS]</title>
+            <map>
+              <name set="pica">tms</name>
+            </map>
+          </index>
+          <index>
+            <title>Hinweis auf musikalische Form und/oder Besetzung [FNM]</title>
+            <map>
+              <name set="pica">fnm</name>
+            </map>
+          </index>
+          <index>
+            <title>Geografikum (Stichwort)[KGE]</title>
+            <map>
+              <name set="pica">kge</name>
+            </map>
+          </index>
+          <index>
+            <title>Name der Person, Verweisungsformen [PEV]</title>
+            <map>
+              <name set="pica">pev</name>
+            </map>
+          </index>
+          <index>
+            <title>Name der Person, Ansetzungs- u. Verweisungsform [ATR]</title>
+            <map>
+              <name set="pica">atr</name>
+            </map>
+          </index>
+          <index>
+            <title>Codierte Angaben [COD]</title>
+            <map>
+              <name set="pica">cod</name>
+            </map>
+          </index>
+          <index>
+            <title>regionale Abrufzeichen [ABR]</title>
+            <map>
+              <name set="pica">abr</name>
+            </map>
+          </index>
+          <index>
+            <title>Datentr&#228;ger [DAT]</title>
+            <map>
+              <name set="pica">dat</name>
+            </map>
+          </index>
+          <index>
+            <title>Ver&#246;ffentlichungsart und Inhalt[AUI]</title>
+            <map>
+              <name set="pica">aui</name>
+            </map>
+          </index>
+          <index>
+            <title>L&#228;ndercode Titel[LCD]</title>
+            <map>
+              <name set="pica">lcd</name>
+            </map>
+          </index>
+          <index>
+            <title>Systematiknummer der SWD [SN]</title>
+            <map>
+              <name set="pica">sn</name>
+            </map>
+          </index>
+          <index>
+            <title>Sprachencode, Normdaten [SC]</title>
+            <map>
+              <name set="pica">sc</name>
+            </map>
+          </index>
+          <index>
+            <title>Zeitcode, Normdaten [ZS]</title>
+            <map>
+              <name set="pica">zs</name>
+            </map>
+          </index>
+          <index>
+            <title>Teilbestands- u. Verwendungskennzeichen, GND [TBS]</title>
+            <map>
+              <name set="pica">tbs</name>
+            </map>
+          </index>
+          <index>
+            <title>Allgemeine Materialbenennung [AMB]</title>
+            <map>
+              <name set="pica">amb</name>
+            </map>
+          </index>
+          <index>
+            <title>L&#228;ndercode GND [LC]</title>
+            <map>
+              <name set="pica">lc</name>
+            </map>
+          </index>
+          <index>
+            <title>Produktsigel[PTS]</title>
+            <map>
+              <name set="pica">pts</name>
+            </map>
+          </index>
+          <index>
+            <title>Originalschrift[SCR]</title>
+            <map>
+              <name set="pica">scr</name>
+            </map>
+          </index>
+          <index>
+            <title>Bibliothekstyp[BTT]</title>
+            <map>
+              <name set="pica">btt</name>
+            </map>
+          </index>
+          <index>
+            <title>Unterhaltstr&#228;ger[UHT]</title>
+            <map>
+              <name set="pica">uht</name>
+            </map>
+          </index>
+          <index>
+            <title>Status[STA]</title>
+            <map>
+              <name set="pica">sta</name>
+            </map>
+          </index>
+          <index>
+            <title>Sonstige Schlagw&#246;rter (u.a. LC SH) [SSW]</title>
+            <map>
+              <name set="pica">ssw</name>
+            </map>
+          </index>
+          <index>
+            <title>British Library Subject Headings [BSH]</title>
+            <map>
+              <name set="pica">bsh</name>
+            </map>
+          </index>
+          <index>
+            <title>Person als Schlagwort[SWP]</title>
+            <map>
+              <name set="pica">swp</name>
+            </map>
+          </index>
+          <index>
+            <title>Sachbegriff [SWS]</title>
+            <map>
+              <name set="pica">sws</name>
+            </map>
+          </index>
+          <index>
+            <title>Geografikum als Schlagwort[SWG]</title>
+            <map>
+              <name set="pica">swg</name>
+            </map>
+          </index>
+          <index>
+            <title>Veranstaltung als Schlagwort[SWC]</title>
+            <map>
+              <name set="pica">swc</name>
+            </map>
+          </index>
+          <index>
+            <title>Organisation als Schlagwort[SWK]</title>
+            <map>
+              <name set="pica">swk</name>
+            </map>
+          </index>
+          <index>
+            <title>Werke als Schlagwort [SWT]</title>
+            <map>
+              <name set="pica">swt</name>
+            </map>
+          </index>
+          <index>
+            <title>Zeitschlagwort [SWZ]</title>
+            <map>
+              <name set="pica">swz</name>
+            </map>
+          </index>
+          <index>
+            <title>Formschlagwort [SWF]</title>
+            <map>
+              <name set="pica">swf</name>
+            </map>
+          </index>
+          <index>
+            <title>Hauptschlagwort e. mehrgliedrigen Ansetzung [HS]</title>
+            <map>
+              <name set="pica">hs</name>
+            </map>
+          </index>
+          <index>
+            <title>&#220;bergeordnetes Schlagwort [OB]</title>
+            <map>
+              <name set="pica">ob</name>
+            </map>
+          </index>
+          <index>
+            <title>Verwandter Begriff [VB]</title>
+            <map>
+              <name set="pica">vb</name>
+            </map>
+          </index>
+          <index>
+            <title>Verweisungsform, Schlagwort[VW]</title>
+            <map>
+              <name set="pica">vw</name>
+            </map>
+          </index>
+          <index>
+            <title>verbale Benennung, Lokale Klassifikationen [LKL]</title>
+            <map>
+              <name set="pica">lkl</name>
+            </map>
+          </index>
+          <index>
+            <title>Schlagwort Eppelsheimer [LKE]</title>
+            <map>
+              <name set="pica">lke</name>
+            </map>
+          </index>
+          <index>
+            <title>Registereintrag lokale Notationen[LKR]</title>
+            <map>
+              <name set="pica">lkr</name>
+            </map>
+          </index>
+          <index>
+            <title>Benennung, Lokale Notation [LKN]</title>
+            <map>
+              <name set="pica">lkn</name>
+            </map>
+          </index>
+          <index>
+            <title>Schlagwort, Ansetzung und VW[SWW]</title>
+            <map>
+              <name set="pica">sww</name>
+            </map>
+          </index>
+          <index>
+            <title>Name des Verlages [VLG]</title>
+            <map>
+              <name set="pica">vlg</name>
+            </map>
+          </index>
+          <index>
+            <title>Normierter Erscheinungsort [OTN]</title>
+            <map>
+              <name set="pica">otn</name>
+            </map>
+          </index>
+          <index>
+            <title>Produktionsland [PLA]</title>
+            <map>
+              <name set="pica">pla</name>
+            </map>
+          </index>
+          <index>
+            <title>Verleger/Drucker [DRU]</title>
+            <map>
+              <name set="pica">dru</name>
+            </map>
+          </index>
+          <index>
+            <title>Regionale PPN [APP]</title>
+            <map>
+              <name set="pica">app</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokale PPN [LPP]</title>
+            <map>
+              <name set="pica">lpp</name>
+            </map>
+          </index>
+          <index>
+            <title>Signatur [SIG]</title>
+            <map>
+              <name set="pica">sig</name>
+            </map>
+          </index>
+          <index>
+            <title>Signatur, Alte Drucke [ASI]</title>
+            <map>
+              <name set="pica">asi</name>
+            </map>
+          </index>
+          <index>
+            <title>Anh&#228;nge zur Grundsignatur [GSA]</title>
+            <map>
+              <name set="pica">gsa</name>
+            </map>
+          </index>
+          <index>
+            <title>Grundsignatur[GSI]</title>
+            <map>
+              <name set="pica">gsi</name>
+            </map>
+          </index>
+          <index>
+            <title>Standort / Sammlung [SGS]</title>
+            <map>
+              <name set="pica">sgs</name>
+            </map>
+          </index>
+          <index>
+            <title>Bibliothekssigel, Suche nach Titel [SGE]</title>
+            <map>
+              <name set="pica">sge</name>
+            </map>
+          </index>
+          <index>
+            <title>Signatur ohne Spatium [SGX]</title>
+            <map>
+              <name set="pica">sgx</name>
+            </map>
+          </index>
+          <index>
+            <title>Signatur, Alte Drucke [AXI]</title>
+            <map>
+              <name set="pica">axi</name>
+            </map>
+          </index>
+          <index>
+            <title>Anh&#228;nge zur Grundsignatur [GXA]</title>
+            <map>
+              <name set="pica">gxa</name>
+            </map>
+          </index>
+          <index>
+            <title>Grundsignatur[GXI]</title>
+            <map>
+              <name set="pica">gxi</name>
+            </map>
+          </index>
+          <index>
+            <title>Standort / Sammlung [SXS]</title>
+            <map>
+              <name set="pica">sxs</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokale IDN [LNR]</title>
+            <map>
+              <name set="pica">lnr</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokale IDN aus SWB-Exemplarsatz[ENR]</title>
+            <map>
+              <name set="pica">enr</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokale IDN eines Lokalsystems [LLN]</title>
+            <map>
+              <name set="pica">lln</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokale IDN aus SWB-Lokalsatz (EPN aus ZDB)[ZNR]</title>
+            <map>
+              <name set="pica">znr</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokales Paketkennzeichen (Produktsigel) [PTL]</title>
+            <map>
+              <name set="pica">ptl</name>
+            </map>
+          </index>
+          <index>
+            <title>Genrebezeichnung [GNR]</title>
+            <map>
+              <name set="pica">gnr</name>
+            </map>
+          </index>
+          <index>
+            <title>Hochschulschriftenvermerk [HSS]</title>
+            <map>
+              <name set="pica">hss</name>
+            </map>
+          </index>
+          <index>
+            <title>Gattungsbegriffe Altes Buch [GBR]</title>
+            <map>
+              <name set="pica">gbr</name>
+            </map>
+          </index>
+          <index>
+            <title>Verbalisierungen der RVK [KLB]</title>
+            <map>
+              <name set="pica">klb</name>
+            </map>
+          </index>
+          <index>
+            <title>Registereintrag der RVK-Notation [KLR]</title>
+            <map>
+              <name set="pica">klr</name>
+            </map>
+          </index>
+          <index>
+            <title>Benennung der RVK-Notation [KLN]</title>
+            <map>
+              <name set="pica">kln</name>
+            </map>
+          </index>
+          <index>
+            <title>Benennung der hierarchisch &#252;bergeordn RVK-Notation [KLH]</title>
+            <map>
+              <name set="pica">klh</name>
+            </map>
+          </index>
+          <index>
+            <title>Kartographische Angaben [KRT]</title>
+            <map>
+              <name set="pica">krt</name>
+            </map>
+          </index>
+          <index>
+            <title>DOI, Handle, URN [PDD]</title>
+            <map>
+              <name set="pica">pdd</name>
+            </map>
+          </index>
+          <index>
+            <title>Document Identifier [DOI]</title>
+            <map>
+              <name set="pica">doi</name>
+            </map>
+          </index>
+          <index>
+            <title>Handle [HDL]</title>
+            <map>
+              <name set="pica">hdl</name>
+            </map>
+          </index>
+          <index>
+            <title>Uniform Ressource Name [URN]</title>
+            <map>
+              <name set="pica">urn</name>
+            </map>
+          </index>
+          <index>
+            <title>Bibliothekssigel (Suche nach Bibliothek) [SGL]</title>
+            <map>
+              <name set="pica">sgl</name>
+            </map>
+          </index>
+          <index>
+            <title>SSG-Nummer [SGB]</title>
+            <map>
+              <name set="pica">sgb</name>
+            </map>
+          </index>
+          <index>
+            <title>Beziehungskennzeichen [BZK]</title>
+            <map>
+              <name set="pica">bzk</name>
+            </map>
+          </index>
+          <index>
+            <title>GND-Nummer [NID]</title>
+            <map>
+              <name set="pica">nid</name>
+            </map>
+          </index>
+          <index>
+            <title>Regionale RVK-Notation[RVK]</title>
+            <map>
+              <name set="pica">rvk</name>
+            </map>
+          </index>
+          <index>
+            <title>RVK-&#220;berordnung [RVU]</title>
+            <map>
+              <name set="pica">rvu</name>
+            </map>
+          </index>
+          <index>
+            <title>RVK-Notation (Mannheim)[RVM]</title>
+            <map>
+              <name set="pica">rvm</name>
+            </map>
+          </index>
+          <index>
+            <title>RVK-Notation (alle)[RVX]</title>
+            <map>
+              <name set="pica">rvx</name>
+            </map>
+          </index>
+          <index>
+            <title>Dewey Decimal Classification [DDC]</title>
+            <map>
+              <name set="pica">ddc</name>
+            </map>
+          </index>
+          <index>
+            <title>Mathematics Subjects Classification [MSC]</title>
+            <map>
+              <name set="pica">msc</name>
+            </map>
+          </index>
+          <index>
+            <title>Sachgruppen DNB bis 2003 [SGR]</title>
+            <map>
+              <name set="pica">sgr</name>
+            </map>
+          </index>
+          <index>
+            <title>Sachgruppen DNB ab 2004 [SGD]</title>
+            <map>
+              <name set="pica">sgd</name>
+            </map>
+          </index>
+          <index>
+            <title>ZDB-Notation [ZDN]</title>
+            <map>
+              <name set="pica">zdn</name>
+            </map>
+          </index>
+          <index>
+            <title>DDC analytisch[DDH]</title>
+            <map>
+              <name set="pica">ddh</name>
+            </map>
+          </index>
+          <index>
+            <title>Freie Notation [FNO]</title>
+            <map>
+              <name set="pica">fno</name>
+            </map>
+          </index>
+          <index>
+            <title>Benennung Freie Notation [FNB]</title>
+            <map>
+              <name set="pica">fnb</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokale Notationen [LNO]</title>
+            <map>
+              <name set="pica">lno</name>
+            </map>
+          </index>
+          <index>
+            <title>Eppelsheimer, L&#196;KA-Notation [LEL]</title>
+            <map>
+              <name set="pica">lel</name>
+            </map>
+          </index>
+          <index>
+            <title>Eppelsheimer, Ortska-Notation [LEO]</title>
+            <map>
+              <name set="pica">leo</name>
+            </map>
+          </index>
+          <index>
+            <title>Eppelsheimer, Syka-Notation [LES]</title>
+            <map>
+              <name set="pica">les</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokaler systematischer Katalog [LNN]</title>
+            <map>
+              <name set="pica">lnn</name>
+            </map>
+          </index>
+          <index>
+            <title>Eppelsheimer, Bioka-Notation [LEB]</title>
+            <map>
+              <name set="pica">leb</name>
+            </map>
+          </index>
+          <index>
+            <title>URL (Phrase) [URL]</title>
+            <map>
+              <name set="pica">url</name>
+            </map>
+          </index>
+          <index>
+            <title>lokale URL (Phrase) [LUR]</title>
+            <map>
+              <name set="pica">lur</name>
+            </map>
+          </index>
+          <index>
+            <title>Texthinweise zu elektronischen Ressourcen[RTE]</title>
+            <map>
+              <name set="pica">rte</name>
+            </map>
+          </index>
+          <index>
+            <title>Schlagwort GND (Phrase) [SP]</title>
+            <map>
+              <name set="pica">sp</name>
+            </map>
+          </index>
+          <index>
+            <title>Schlagwort GND Ansetzungsform [AN]</title>
+            <map>
+              <name set="pica">an</name>
+            </map>
+          </index>
+          <index>
+            <title>Schlagwort GND aequivalente Form [VS]</title>
+            <map>
+              <name set="pica">vs</name>
+            </map>
+          </index>
+          <index>
+            <title>Schlagwort, Ansetzungs- u. Vw.formen [SWR]</title>
+            <map>
+              <name set="pica">swr</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokales Schlagwort (Phrase) [LSR]</title>
+            <map>
+              <name set="pica">lsr</name>
+            </map>
+          </index>
+          <index>
+            <title>Verbuchungsnummer [VBN]</title>
+            <map>
+              <name set="pica">vbn</name>
+            </map>
+          </index>
+          <index>
+            <title>Zugangsnummer[ZNM]</title>
+            <map>
+              <name set="pica">znm</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokale Abrufzeichen[ABL]</title>
+            <map>
+              <name set="pica">abl</name>
+            </map>
+          </index>
+          <index>
+            <title>Exemplarbezogener Kommentar (benutzerrelevante Vermerke)[EXK]</title>
+            <map>
+              <name set="pica">exk</name>
+            </map>
+          </index>
+          <index>
+            <title>Lokale Kennungen [LOK]</title>
+            <map>
+              <name set="pica">lok</name>
+            </map>
+          </index>
+          <index>
+            <title>ZDB-Prioit&#228;tskennzahl [PRZ]</title>
+            <map>
+              <name set="pica">prz</name>
+            </map>
+          </index>
+          <index>
+            <title>SSG-Nummer [SSG]</title>
+            <map>
+              <name set="pica">ssg</name>
+            </map>
+          </index>
+          <index>
+            <title>SSG-Notation [SSN]</title>
+            <map>
+              <name set="pica">ssn</name>
+            </map>
+          </index>
+          <index>
+            <title>Provenienz alt[PRV]</title>
+            <map>
+              <name set="pica">prv</name>
+            </map>
+          </index>
+          <index>
+            <title>bibliothekarischer Ansprechpartner/in (BIBINFO) [BKO]</title>
+            <map>
+              <name set="pica">bko</name>
+            </map>
+          </index>
+          <index>
+            <title>Installationsdatum f&#252;r die Verbundkatalogisierung (BIBINFO) [DVK]</title>
+            <map>
+              <name set="pica">dvk</name>
+            </map>
+          </index>
+          <index>
+            <title>Tarifkennung f&#252;r Dienstleistungen (BIBINFO) [TKD]</title>
+            <map>
+              <name set="pica">tkd</name>
+            </map>
+          </index>
+          <index>
+            <title>Provenienz [PRN]</title>
+            <map>
+              <name set="pica">prn</name>
+            </map>
+          </index>
+          <index>
+            <title>Besetzung,Form u. Gattung (Kette) [BKT]</title>
+            <map>
+              <name set="pica">bkt</name>
+            </map>
+          </index>
+          <index>
+            <title>Neuerwerbungsdatum mit ELN angehaengt [NWX]</title>
+            <map>
+              <name set="pica">nwx</name>
+            </map>
+          </index>
+          <index>
+            <title>Neuerwerbungen unaufgeschl&#252;sselt</title>
+            <map>
+              <name set="pica">nwl</name>
+            </map>
+          </index>
+          <index>
+            <title>Neuerwerbungsdatum [NWD]</title>
+            <map>
+              <name set="pica">nwd</name>
+            </map>
+          </index>
+          <index>
+            <title>Neuerwerbungen (Fachgruppen) [NWF]</title>
+            <map>
+              <name set="pica">nwf</name>
+            </map>
+          </index>
+          <index>
+            <title>Neuerwerbungen (weitere Kennungen) [NWW]</title>
+            <map>
+              <name set="pica">nww</name>
+            </map>
+          </index>
+          <index>
+            <title>ELN f&#252;r Neuerwerbungen (ELN) [NWE]</title>
+            <map>
+              <name set="pica">nwe</name>
+            </map>
+          </index>
+          <index>
+            <title>&#196;nderungsdatum Titel- und Normdaten [AED]</title>
+            <map>
+              <name set="pica">aed</name>
+            </map>
+          </index>
+          <index>
+            <title>Neuanlagedatum Titel- und Normdaten [SEN]</title>
+            <map>
+              <name set="pica">sen</name>
+            </map>
+          </index>
+          <index>
+            <title>&#196;nderungsdatum Ex.-daten (Lokal) [AEE]</title>
+            <map>
+              <name set="pica">aee</name>
+            </map>
+          </index>
+          <index>
+            <title>Erscheinungsjahr [EJH]</title>
+            <map>
+              <name set="pica">ejh</name>
+            </map>
+          </index>
+          <index>
+            <title>Neuanlagedatum Lokale Normdaten (Lokal)[SE0]</title>
+            <map>
+              <name set="pica">se0</name>
+            </map>
+          </index>
+          <index>
+            <title>Neuanlagedatum Exemplardaten [SXN]</title>
+            <map>
+              <name set="pica">sxn</name>
+            </map>
+          </index>
+          <index>
+            <title>Bibliotheksname und Ort[NAM]</title>
+            <map>
+              <name set="pica">nam</name>
+            </map>
+          </index>
+          <index>
+            <title>BIK der ZDB [BIK]</title>
+            <map>
+              <name set="pica">bik</name>
+            </map>
+          </index>
+          <index>
+            <title>External Library Number (ELN) [ELN]</title>
+            <map>
+              <name set="pica">eln</name>
+            </map>
+          </index>
+          <index>
+            <title>Internal Library Number (ILN) [ILN]</title>
+            <map>
+              <name set="pica">iln</name>
+            </map>
+          </index>
+          <index>
+            <title>Metatdaten [MDT]</title>
+            <map>
+              <name set="pica">mdt</name>
+            </map>
+          </index>
+          <index>
+            <title>Metadaten-Encoding [MDA]</title>
+            <map>
+              <name set="pica">mda</name>
+            </map>
+          </index>
+          <index>
+            <title>Metadaten-MIME-Type [MDB]</title>
+            <map>
+              <name set="pica">mdb</name>
+            </map>
+          </index>
+          <index>
+            <title>Metadaten-Schema [MDC]</title>
+            <map>
+              <name set="pica">mdc</name>
+            </map>
+          </index>
+          <index>
+            <title>Metadaten-Version [MDD]</title>
+            <map>
+              <name set="pica">mdd</name>
+            </map>
+          </index>
+          <index>
+            <title>Metadaten-URI [MDE]</title>
+            <map>
+              <name set="pica">mde</name>
+            </map>
+          </index>
+          <index>
+            <title>Metadaten-Text [MDF]</title>
+            <map>
+              <name set="pica">mdf</name>
+            </map>
+          </index>
+          <index>
+            <title>Bibliogr. Gattung und Status [BBG]</title>
+            <map>
+              <name set="pica">bbg</name>
+            </map>
+          </index>
+          <index>
+            <title>Bibliogr. Gattung und Status (Lokale Normdaten) [BBL]</title>
+            <map>
+              <name set="pica">bbl</name>
+            </map>
+          </index>
+          <index>
+            <title>Einheitssachtitel (Phrase) [TSE]</title>
+            <map>
+              <name set="pica">tse</name>
+            </map>
+          </index>
+          <index>
+            <title>Haupt- und Ansetzungssachtitel (Phrase) [TSH]</title>
+            <map>
+              <name set="pica">tsh</name>
+            </map>
+          </index>
+          <index>
+            <title>OLC-Sortstring</title>
+            <map>
+              <name set="pica">olc</name>
+            </map>
+          </index>
+          <index>
+            <title>EPN Pica-Identnummer des Exemplarsatzes [EPN]</title>
+            <map>
+              <name set="pica">epn</name>
+            </map>
+          </index>
+          <index>
+            <title>Codes Inhalt, Medien, Datentr&#228;ger (IMD)</title>
+            <map>
+              <name set="pica">imd</name>
+            </map>
+          </index>
+          <index>
+            <title>Sonstige Schlagw&#246;rter Fremdeinspielung[FSH]</title>
+            <map>
+              <name set="pica">fsh</name>
+            </map>
+          </index>
+          <index>
+            <title>DB-Schlagw&#246;rter bis 1986[SWA]</title>
+            <map>
+              <name set="pica">swa</name>
+            </map>
+          </index>
+          <index>
+            <title>Aenderungscodierung (GND)</title>
+            <map>
+              <name set="pica">ac</name>
+            </map>
+          </index>
+          <index>
+            <title>Urheber: Werk[UWK]</title>
+            <map>
+              <name set="pica">uwk</name>
+            </map>
+          </index>
+          <index>
+            <title>Redaktionelle Bemerkungen, Definitionen [BEM]</title>
+            <map>
+              <name set="pica">bem</name>
+            </map>
+          </index>
+          <index>
+            <title>DDC-Notation in der GND [DDN]</title>
+            <map>
+              <name set="pica">ddn</name>
+            </map>
+          </index>
+          <index>
+            <title>UUU</title>
+            <map>
+              <name set="pica">uuu</name>
+            </map>
+          </index>
+          <index>
+            <title>Selektion</title>
+            <map>
+              <name set="pica">sel</name>
+            </map>
+          </index>
+          <index>
+            <title>Normdaten-ID-Nummern fuer ZING [ZID]</title>
+            <map>
+              <name set="pica">zid</name>
+            </map>
+          </index>
+          <index>
+            <title>Entitaet in der GND (ENT)</title>
+            <map>
+              <name set="pica">ent</name>
+            </map>
+          </index>
+          <index>
+            <title>Katalogisierungsquelle (KQ)</title>
+            <map>
+              <name set="pica">kq</name>
+            </map>
+          </index>
+          <index>
+            <title>Nutzungskennzeichen GND (NC)</title>
+            <map>
+              <name set="pica">nc</name>
+            </map>
+          </index>
+          <index>
+            <title>Musik: Besetzung, Tonart, Form des Werks (HI)</title>
+            <map>
+              <name set="pica">hi</name>
+            </map>
+          </index>
+          <index>
+            <title>Redaktionelle Bemerkungen (GND) [RDB]</title>
+            <map>
+              <name set="pica">rdb</name>
+            </map>
+          </index>
+          <index>
+            <title>Codierung der Relation[RCC]</title>
+            <map>
+              <name set="pica">rcc</name>
+            </map>
+          </index>
+          <index>
+            <title>RCV</title>
+            <map>
+              <name set="pica">rcv</name>
+            </map>
+          </index>
+          <index>
+            <title>RCU</title>
+            <map>
+              <name set="pica">rcu</name>
+            </map>
+          </index>
+          <index>
+            <title>RCP</title>
+            <map>
+              <name set="pica">rcp</name>
+            </map>
+          </index>
+          <index>
+            <title>RCB</title>
+            <map>
+              <name set="pica">rcb</name>
+            </map>
+          </index>
+          <index>
+            <title>RCF</title>
+            <map>
+              <name set="pica">rcf</name>
+            </map>
+          </index>
+          <index>
+            <title>RCS</title>
+            <map>
+              <name set="pica">rcs</name>
+            </map>
+          </index>
+          <index>
+            <title>RCZ</title>
+            <map>
+              <name set="pica">rcz</name>
+            </map>
+          </index>
+          <index>
+            <title>RCG</title>
+            <map>
+              <name set="pica">rcg</name>
+            </map>
+          </index>
+          <index>
+            <title>Relationiertes Werk in der GND [RLU]</title>
+            <map>
+              <name set="pica">rlu</name>
+            </map>
+          </index>
+          <index>
+            <title>Relationierte Person in der GND [RLP]</title>
+            <map>
+              <name set="pica">rlp</name>
+            </map>
+          </index>
+          <index>
+            <title>Relationierte K&#246;perschaft in der GND [RLB]</title>
+            <map>
+              <name set="pica">rlb</name>
+            </map>
+          </index>
+          <index>
+            <title>Relationierter Kongress in der GND [RLF]</title>
+            <map>
+              <name set="pica">rlf</name>
+            </map>
+          </index>
+          <index>
+            <title>Relationiertes Schlagwort in der GND [RLS]</title>
+            <map>
+              <name set="pica">rls</name>
+            </map>
+          </index>
+          <index>
+            <title>Relationierte Zeit in der GND [RLZ]</title>
+            <map>
+              <name set="pica">rlz</name>
+            </map>
+          </index>
+          <index>
+            <title>Relationiertes Geografikum in der GND [RLG]</title>
+            <map>
+              <name set="pica">rlg</name>
+            </map>
+          </index>
+          <index>
+            <title>Relationierter Deskriptor in Hinweissaetzen [RLH]</title>
+            <map>
+              <name set="pica">rlh</name>
+            </map>
+          </index>
+          <index>
+            <title>Definitionen (GND) [DEF]</title>
+            <map>
+              <name set="pica">def</name>
+            </map>
+          </index>
+          <index>
+            <title>Relationierter Normsatz in der GND [RL]</title>
+            <map>
+              <name set="pica">rl</name>
+            </map>
+          </index>
+          <index>
+            <title>Erscheinungsjahr</title>
+            <map>
+              <name set="pica">jhr</name>
+            </map>
+          </index>
+          <index>
+            <title>Materialart</title>
+            <map>
+              <name set="pica">mat</name>
+            </map>
+          </index>
+          <index>
+            <title>Region</title>
+            <map>
+              <name set="pica">reg</name>
+            </map>
+          </index>
+          <index>
+            <title>Sprache</title>
+            <map>
+              <name set="pica">taa</name>
+            </map>
+          </index>
+          <index>
+            <title>jetzt AUI</title>
+            <map>
+              <name set="pica">lan</name>
+            </map>
+          </index>
+          <index>
+            <title>Sysflag</title>
+            <map>
+              <name set="pica">sup</name>
+            </map>
+          </index>
+          <index>
+            <title>K10-Verbundflag</title>
+            <map>
+              <name set="pica">vbr</name>
+            </map>
+          </index>
+          <index>
+            <title>Lieferant</title>
+            <map>
+              <name set="pica">lie</name>
+            </map>
+          </index>
+          <index>
+            <title>Erschliessungsmaterial</title>
+            <map>
+              <name set="pica">esm</name>
+            </map>
+          </index>
+          <index>
+            <title>LibID-ADI</title>
+            <map>
+              <name set="pica">bib</name>
+            </map>
+          </index>
+        </indexInfo>
+        <schemaInfo>
+          <schema name="marcxmlvbos" identifier="">
+            <title>Marc21XML SWB-PPN in 001, Originalschriften, entspricht der Absprache zwischen den Verb&#252;nden</title>
+          </schema>
+          <schema name="marcxmlda" identifier="">
+            <title>Marc21XML f&#252;r DA</title>
+          </schema>
+          <schema name="marcxmlvbflos" identifier="">
+            <title>Marc21XML Fernleih-Variante, SWB-PPN in 001, Originalschriften, entspricht der Absprache zwischen den Verb&#252;nden</title>
+          </schema>
+          <schema name="picaxml" identifier="">
+            <title>PicaXML</title>
+          </schema>
+          <schema name="marcxmlvb" identifier="">
+            <title>MARC21 XML, SWB-PPN in 001, entspricht der Absprache zwischen den Verb&#252;nden</title>
+          </schema>
+          <schema name="extppxml" identifier="">
+            <title>Pica+ in XML</title>
+          </schema>
+          <schema name="marcxmlk10os" identifier="">
+            <title>Marc21XML, K10plus-PPN in 001, Originalschriften, entspricht der Absprache zwischen den Verb&#252;nden</title>
+          </schema>
+          <schema name="marcxmlk10flos" identifier="">
+            <title>Marc21XML, K10plus-PPN in 001, Originalschriften, Fernleihvariante</title>
+          </schema>
+        </schemaInfo>
+      </explain>
+    </zs:recordData>
+  </zs:record>
+  <zs:echoedExplainRequest>
+    <zs:version>2.0</zs:version>
+    <zs:recordXMLEscaping>xml</zs:recordXMLEscaping>
+  </zs:echoedExplainRequest>
+</zs:explainResponse>

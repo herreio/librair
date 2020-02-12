@@ -1,0 +1,135 @@
+<sru:explainResponse xmlns:sru="//www.loc.gov/zing/srw/" xmlns:zr="http://explain.z3950.org/dtd/2.1/">
+  <sru:version>1.2</sru:version>
+  <sru:record>
+    <sru:recordPacking>XML</sru:recordPacking>
+    <sru:recordSchema>http://explain.z3950.org/dtd/2.1/</sru:recordSchema>
+    <sru:recordData>
+      <zr:explain authoritative="true">
+        <zr:serverInfo>
+          <zr:host>https://data.cerl.org/thesaurus/_sru</zr:host>
+          <zr:port>80</zr:port>
+        </zr:serverInfo>
+        <zr:databaseInfo>
+          <zr:title>CERL Thesaurus</zr:title>
+          <zr:description lang="en" primary="true">The CERL Thesaurus records the names of printing places, printers, booksellers, personal and corporate authors from the Hand-Press-Era (1450-1830). It provides controlled headings as used by different libraries throughout Europe as well as variant name forms that appear in the imprint of the respective publications and further information on each entity, such as biographical information, information on a person's occupation or activity and the relationship between different entities.</zr:description>
+          <zr:contact>Alex Jahnke, convert@gbv.de</zr:contact>
+          <zr:indexInfo>
+            <zr:set identifier="info:srw/cql-context-set/1/dc-v1.1" name="dc"/>
+            <zr:set identifier="info:srw/cql-context-set/1/cql-v1.2" name="cql"/>
+            <zr:set identifier="http://sru.cerl.org/cql/long/1.0/" name="ct"/>
+            <zr:set identifier="http://sru.cerl.org/cql/short/1.0" name="cn"/>
+            <zr:index>
+              <zr:title>General keywords</zr:title>
+              <zr:map>
+                <zr:name set="cql">anywhere</zr:name>
+              </zr:map>
+              <zr:configInfo>
+                <zr:supports type="relation">&lt;&gt;</zr:supports>
+                <zr:supports type="relation">any</zr:supports>
+                <zr:supports type="relation">all</zr:supports>
+                <zr:supports type="relation">exact</zr:supports>
+                <zr:supports type="relation">=</zr:supports>
+              </zr:configInfo>
+            </zr:index>
+            <zr:index>
+              <zr:title>Place Name</zr:title>
+              <zr:map>
+                <zr:name set="ct">placename</zr:name>
+              </zr:map>
+              <zr:map>
+                <zr:name set="cn">l</zr:name>
+              </zr:map>
+              <zr:configInfo>
+                <zr:supports type="relation">exact</zr:supports>
+                <zr:supports type="relation">=</zr:supports>
+                <zr:supports type="relation">all</zr:supports>
+                <zr:supports type="relation">&lt;&gt;</zr:supports>
+                <zr:supports type="relation">any</zr:supports>
+              </zr:configInfo>
+            </zr:index>
+            <zr:index>
+              <zr:title>Imprint Name</zr:title>
+              <zr:map>
+                <zr:name set="ct">imprintname</zr:name>
+              </zr:map>
+              <zr:map>
+                <zr:name set="cn">i</zr:name>
+              </zr:map>
+              <zr:configInfo>
+                <zr:supports type="relation">any</zr:supports>
+                <zr:supports type="relation">&lt;&gt;</zr:supports>
+                <zr:supports type="relation">all</zr:supports>
+                <zr:supports type="relation">=</zr:supports>
+                <zr:supports type="relation">exact</zr:supports>
+              </zr:configInfo>
+            </zr:index>
+            <zr:index>
+              <zr:title>Corporate Name</zr:title>
+              <zr:map>
+                <zr:name set="ct">corporatename</zr:name>
+              </zr:map>
+              <zr:map>
+                <zr:name set="cn">c</zr:name>
+              </zr:map>
+              <zr:configInfo>
+                <zr:supports type="relation">all</zr:supports>
+                <zr:supports type="relation">exact</zr:supports>
+                <zr:supports type="relation">=</zr:supports>
+                <zr:supports type="relation">&lt;&gt;</zr:supports>
+                <zr:supports type="relation">any</zr:supports>
+              </zr:configInfo>
+            </zr:index>
+            <zr:index>
+              <zr:title>CT identifier</zr:title>
+              <zr:map>
+                <zr:name set="dc">identifier</zr:name>
+              </zr:map>
+              <zr:map>
+                <zr:name set="ct">identifier</zr:name>
+              </zr:map>
+              <zr:map>
+                <zr:name set="cn">id</zr:name>
+              </zr:map>
+              <zr:configInfo>
+                <zr:supports type="relation">=</zr:supports>
+                <zr:supports type="relation">exact</zr:supports>
+                <zr:supports type="relation">all</zr:supports>
+                <zr:supports type="relation">any</zr:supports>
+                <zr:supports type="relation">&lt;&gt;</zr:supports>
+              </zr:configInfo>
+            </zr:index>
+            <zr:index>
+              <zr:title>External Identifier</zr:title>
+              <zr:map>
+                <zr:name set="ct">externalid</zr:name>
+              </zr:map>
+              <zr:map>
+                <zr:name set="cn">eid</zr:name>
+              </zr:map>
+              <zr:configInfo>
+                <zr:supports type="relation">all</zr:supports>
+                <zr:supports type="relation">=</zr:supports>
+                <zr:supports type="relation">exact</zr:supports>
+                <zr:supports type="relation">any</zr:supports>
+                <zr:supports type="relation">&lt;&gt;</zr:supports>
+              </zr:configInfo>
+            </zr:index>
+          </zr:indexInfo>
+          <zr:schemaInfo>
+            <zr:schema identifier="http://sru.cerl.org/schema/ctas/1.1/" retrieve="true" name="ctas"/>
+            <zr:schema identifier="info:srw/schema/1/marcxml-v1.1" retrieve="true" name="marcxml"/>
+            <zr:schema identifier="http://sru.cerl.org/schema/ctas/1.0/" retrieve="true" name="ctas10"/>
+          </zr:schemaInfo>
+          <zr:configInfo>
+            <zr:default type="numberOfRecords">10</zr:default>
+            <zr:default type="contextSet">cql</zr:default>
+            <zr:default type="index">cql.anywhere</zr:default>
+            <zr:default type="relation">all</zr:default>
+            <zr:default type="retrieveSchema">ctas</zr:default>
+            <zr:setting type="maximumRecords">100</zr:setting>
+          </zr:configInfo>
+        </zr:databaseInfo>
+      </zr:explain>
+    </sru:recordData>
+  </sru:record>
+</sru:explainResponse>
