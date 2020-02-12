@@ -30,7 +30,7 @@ def explain(store=False, path=""):
     if not store:
         xml.pretty(result)
     else:
-        file = xml.filepath("sru", "cerl", "", "")
+        file = xml.filepath("sru", "zdb", "", "")
         xml.writer(result, file, path=path)
 
 
