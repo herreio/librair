@@ -22,29 +22,16 @@ def retrieve(query):
     return sru.retrieve(url)
 
 
-def _explain():
+def explain(store=False, path=""):
     """
     get sru explanation
     """
-    return sru.explain(BASE, VERSION)
-
-
-def explain():
-    """
-    print pretty sru explanation
-    """
-    result = _explain()
-    xml.pretty(result)
-
-
-def explain_store():
-    """
-    store sru explanation
-    """
-    result = _explain()
-    file = xml.filepath("sru", "zdb", "", "")
-    xml.writer(result, file, path="res/meta")
-
+    result = sru.explain(BASE, VERSION)
+    if not store:
+        xml.pretty(result)
+    else:
+        file = xml.filepath("sru", "cerl", "", "")
+        xml.writer(result, file, path=path)
 
 def scroll(query, size=100, meta="mods-xml"):
     """
