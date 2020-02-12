@@ -33,6 +33,7 @@ def explain(store=False, path=""):
         file = xml.filepath("sru", "cerl", "", "")
         xml.writer(result, file, path=path)
 
+
 def scroll(query, size=100, meta="mods-xml"):
     """
     scroll responses for given query and return result list
