@@ -14,5 +14,5 @@ def explain(store=False, path=""):
     if not store:
         xml.pretty(result)
     else:
-        file = xml.filepath("sru-explain", "dnb-authorities", "", "")
+        file = xml.filepath("sru", "dnb-authorities", "", "")
         xml.writer(result, file, path=path)
