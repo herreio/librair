@@ -6,7 +6,7 @@ from ..schemas import xml
 
 BASE = "https://services.dnb.de/sru/authorities"
 VERSION = "1.1"
-SCHEMA = "mods-xml"  # dc, RDFxml, PicaPlus-xml, baseDc-xml
+SCHEMA = "RDFxml"  # dc, RDFxml, PicaPlus-xml, baseDc-xml, mods-xml
 
 
 def explain(store=False, path=""):
@@ -16,3 +16,14 @@ def explain(store=False, path=""):
     else:
         file = xml.filepath("sru", "dnb-authorities", "", "")
         xml.writer(result, file, path=path)
+
+
+def retrieve(query):
+    """
+    retrieve items matching given query
+    """
+    url = sru.address(BASE, query,
+                      version=VERSION,
+                      schema=SCHEMA,
+                      records=100)
+    return sru.retrieve(url)
