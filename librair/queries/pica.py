@@ -34,19 +34,21 @@ def ort(name):
     """
     return "pica.ort" + quote("=") + name
 
+
 def issn_im_aufsatz(issn):
     """
     get query for articles in journal with given issn
-    
+
     used by:
         - gjz18
     """
     return "pica.zis" + quote("=") + str(issn)
 
+
 def zdbnum_im_aufsatz(zdbnum):
     """
     get query for articles in journal with given zdb number (identifier)
-    
+
     used by:
         - gjz18
     """
