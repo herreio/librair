@@ -7,6 +7,7 @@ Welcome to librair's documentation!
    :maxdepth: 1
 
    refs/catalogs
+   refs/interfaces
    refs/protocols
    refs/queries
    refs/schemas

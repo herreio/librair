@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from . import catalogs
+from . import interfaces
 from . import protocols
 from . import queries
 from . import schemas
