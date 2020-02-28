@@ -74,3 +74,52 @@ def reader(path):
     """
     parser = etree.XMLParser(remove_blank_text=True)
     return etree.parse(path, parser=parser)
+
+
+class Element:
+    """
+    wrapper for xml element
+    """
+
+    def __init__(self, tree, ns=None):
+        self.raw = tree
+        self.ns = None
+        if ns is not None:
+            self.ns = ns
+        else:
+            self.ns = self.namespace()
+
+    def __repr__(self):
+        return etree.tostring(self.raw, pretty_print=True).decode()
+
+    def namespace(self):
+        """
+        extract full namespace (URL) from root element
+        """
+        if len(self.raw.nsmap) > 1 and None in self.raw.nsmap:
+            return self.raw.nsmap[None]
+        else:
+            return list(self.raw.nsmap.values())[0]
+
+    def xpath(self, tag, relative=True):
+        """
+        create xpath query for given tag
+        """
+        if relative:
+            return ".//{" + self.ns + "}" + tag
+        else:
+            return "{" + self.ns + "}" + tag
+
+    def find(self, tag, relative=True):
+        """
+        find tag in raw xml from namespace of root
+        """
+        query = self.xpath(tag, relative=relative)
+        return self.raw.find(query)
+
+    def findall(self, tag, relative=True):
+        """
+        find all tags in raw xml from namespace of root
+        """
+        query = self.xpath(tag, relative=relative)
+        return self.raw.findall(query)
