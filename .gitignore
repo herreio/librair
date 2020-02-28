@@ -6,6 +6,7 @@ _/
 dev/
 dev.*
 *-dev.*
+*_dev.*
 
 # editor temp files
 *.swp
