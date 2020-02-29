@@ -65,7 +65,7 @@ class Client:
         url = sru.address(self.URL, query, schema=schema, records=1,
                           version=self.version, operation="searchRetrieve")
         response = Response(sru.retrieve(url))
-        return int(response.find("numberOfRecords").text)
+        return response.total()
 
     def scroll(self, query, schema, size=100):
         """
@@ -73,10 +73,7 @@ class Client:
         in steps given by size, return all collected records
         """
         result = []
-        url = sru.address(self.URL, query, schema=schema, records=1,
-                          version=self.version, operation="searchRetrieve")
-        response = Response(sru.retrieve(url))
-        total = int(response.find("numberOfRecords").text)
+        total = self.total(query, schema)
         for i in tqdm(range(1, total+1, size)):
             url = sru.address(self.URL, query=query, schema=schema,
                               records=size, version=self.version,
@@ -94,6 +91,9 @@ class Response(xml.Element):
 
     def __init__(self, element, ns=None):
         super().__init__(element, ns=ns)
+
+    def total(self):
+        return int(self.find("numberOfRecords").text)
 
     def items(self):
         """
