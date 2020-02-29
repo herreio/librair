@@ -6,6 +6,24 @@ from ..protocols import sru
 
 from tqdm import tqdm
 
+endpoints = {
+  "b3kat": "http://bvbr.bib-bvb.de:5661/bvb01sru",
+  "cerl-thesaurus": "https://data.cerl.org/thesaurus/_sru",
+  "dnb": "https://services.dnb.de/sru/dnb",
+  "gnd": "https://services.dnb.de/sru/authorities",
+  "isil": "http://services.dnb.de/sru/bib",
+  "zdb": "http://services.dnb.de/sru/zdb",
+  "vd18": "http://sru.gbv.de/vd18",
+  "gjz18": "http://sru.gbv.de/gjz18",
+  "idz": "http://sru.gbv.de/idz",
+  "hebis": "http://cbsopac.rz.uni-frankfurt.de/sru/DB=2.1/",
+  "k10plus": "http://sru.k10plus.de/opac-de-627",
+  "vd17": "http://sru.k10plus.de/vd17",
+  "gvk": "http://sru.k10plus.de/gvk",
+  "kalliope": "http://kalliope-verbund.info/sru",
+  "swb": "https://sru.bsz-bw.de/swb",
+}
+
 
 class Client:
     """
@@ -60,8 +78,9 @@ class Client:
         response = Response(sru.retrieve(url))
         total = int(response.find("numberOfRecords").text)
         for i in tqdm(range(1, total+1, size)):
-            url = sru.address(self.URL, query=query, schema=schema, records=size,
-                              version=self.version, operation="searchRetrieve") \
+            url = sru.address(self.URL, query=query, schema=schema,
+                              records=size, version=self.version,
+                              operation="searchRetrieve") \
                               + "&startRecord=" + str(i)
             response = Response(sru.retrieve(url))
             result = result + response.items()
@@ -117,10 +136,11 @@ class Explain:
             self.load()
             if self.root is not None:
                 return str(self.root)
-            else:
-                return ""
-        else:
-            return ""
+        return ""
+
+    def store(self, db, path=""):
+        file = xml.filepath("sru", db, "", "")
+        xml.writer(self.root.raw, file, path=path)
 
     def load(self):
         """
@@ -202,20 +222,22 @@ class Explain:
         """
         sets = []
         indexes = {}
-        index_name = self.root.xpath("name")
-        index_title = self.root.xpath("title")
-        index_info = xml.Element(self.root.find("indexInfo"), ns=self.ns)
-        index_sets = index_info.findall("set")
-        index_elements = index_info.findall("index")
-        for i in index_sets:
-            sets.append(i.attrib['name'])
-        for i in index_elements:
-            title = i.find(index_title)
-            name = i.find(index_name)
-            s = name.attrib["set"]
-            n = name.text
-            if s + "." not in n:
-                n = s + "." + n
-            indexes[n] = title.text
+        index_info = self.root.find("indexInfo")
+        if index_info is not None:
+            index_info = xml.Element(index_info, ns=self.ns)
+            index_sets = index_info.findall("set")
+            for i in index_sets:
+                sets.append(i.attrib['name'])
+            index_name = self.root.xpath("name")
+            index_title = self.root.xpath("title")
+            index_elements = index_info.findall("index")
+            for i in index_elements:
+                title = i.find(index_title)
+                name = i.find(index_name)
+                s = name.attrib["set"]
+                n = name.text
+                if s + "." not in n:
+                    n = s + "." + n
+                indexes[n] = title.text
         self.sets = sets
         self.indexes = indexes
