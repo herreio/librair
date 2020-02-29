@@ -219,6 +219,18 @@ class Explain:
                     schemas[name] = ""
         self.schemas = schemas
 
+    def load_config(self):
+        """
+        config_info = self.root.find("configInfo", relative=False)
+        """
+        pass
+
+    def load_server(self):
+        """
+        server_info = self.root.find("serverInfo")
+        """
+        pass
+
     def load_indexes(self):
         """
         load info about indexes given in sru explain response
