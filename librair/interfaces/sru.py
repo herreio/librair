@@ -139,6 +139,9 @@ class Explain:
         return ""
 
     def store(self, db, path=""):
+        """
+        write explain xml to file at path
+        """
         file = xml.filepath("sru", db, "", "")
         xml.writer(self.root.raw, file, path=path)
 
