@@ -84,10 +84,7 @@ class Element:
     def __init__(self, tree, ns=None):
         self.raw = tree
         self.ns = None
-        if ns is not None:
-            self.ns = ns
-        else:
-            self.ns = self.namespace()
+        self.ns = ns if ns is not None else self.namespace()
 
     def __repr__(self):
         return etree.tostring(self.raw, pretty_print=True).decode()
@@ -96,19 +93,21 @@ class Element:
         """
         extract full namespace (URL) from root element
         """
-        if len(self.raw.nsmap) > 1 and None in self.raw.nsmap:
-            return self.raw.nsmap[None]
+        if len(self.raw.nsmap) > 0:
+            return self.raw.nsmap[None] if None in self.raw.nsmap else \
+                list(self.raw.nsmap.values())[0]
         else:
-            return list(self.raw.nsmap.values())[0]
+            return None
 
     def xpath(self, tag, relative=True):
         """
         create xpath query for given tag
         """
-        if relative:
-            return ".//{" + self.ns + "}" + tag
+        if self.ns is not None:
+            return ".//{" + self.ns + "}" + tag if relative else \
+                "{" + self.ns + "}" + tag
         else:
-            return "{" + self.ns + "}" + tag
+            return ".//" + tag if relative else tag
 
     def find(self, tag, relative=True):
         """
