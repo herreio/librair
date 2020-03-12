@@ -48,13 +48,20 @@ class Client:
         self.indexes = self.explain.indexes
         self.schemas = list(self.explain.schemas.keys())
 
+    def address(self, query, schema, records=10, operation="searchRetrieve"):
+        """
+        generate request url for given query and schema
+        """
+        return sru.address(self.URL, query, schema=schema, records=records,
+                           version=self.version, operation=operation)
+
     def search(self, query, schema, records=1):
         """
         search items matching given query, request given schema and
         return number of items given by records
         """
-        url = sru.address(self.URL, query, schema=schema, records=records,
-                          version=self.version, operation="searchRetrieve")
+        url = self.address(query, schema, records=records,
+                           operation="searchRetrieve")
         response = Response(sru.retrieve(url))
         return response.items()
 
