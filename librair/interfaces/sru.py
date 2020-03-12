@@ -104,6 +104,19 @@ class Response(xml.Element):
             items = [d[0] for d in data]
             return items if len(items) > 1 else items[0]
         else:
+            diag = self.find("diagnostics")
+            if diag is not None:
+                diag = xml.Element(diag)
+                print("DIAGNOSTICS")
+                uri = diag.find("uri")
+                if uri is not None:
+                    print("URI:", uri.text)
+                message = diag.find("message")
+                if message is not None:
+                    print("Message:", message.text)
+                details = diag.find("details")
+                if details is not None:
+                    print("Details:", details.text)
             return None
 
 
