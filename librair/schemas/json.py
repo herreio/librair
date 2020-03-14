@@ -30,7 +30,7 @@ def writer(data, file, path="res"):
         os.makedirs(path)
     out = os.path.join(path, file)
     with open(out, 'w', encoding="utf-8") as f:
-        s = json.dumps(data, indent=2)
+        s = json.dumps(data, ensure_ascii=False, indent=2)
         f.write(s)
 
 
