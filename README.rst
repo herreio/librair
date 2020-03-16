@@ -18,6 +18,12 @@ You can simply install this package via `PyPI <https://pypi.org/project/librair/
 
     pip install librair
 
+... or via this repository:
+
+.. code-block:: shell
+
+    pip install -e https://github.com/herreio/librair.git#egg=librair
+
 ... or by cloning the repository:
 
 .. code-block:: shell
