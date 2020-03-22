@@ -16,19 +16,3 @@ sru module
     :members:
     :undoc-members:
     :show-inheritance:
-
-oai module
----------------------
-
-.. automodule:: librair.protocols.oai
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-iiif module
----------------------
-
-.. automodule:: librair.protocols.iiif
-    :members:
-    :undoc-members:
-    :show-inheritance:
