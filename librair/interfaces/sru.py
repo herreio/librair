@@ -62,6 +62,8 @@ class Client:
         """
         url = self.address(query, schema, records=records,
                            operation="searchRetrieve")
+        if self.token is not None:
+            url += "&accessToken=" + self.token
         response = Response(sru.retrieve(url))
         return response.items()
 
@@ -69,8 +71,10 @@ class Client:
         """
         determine total number of results for given query
         """
-        url = sru.address(self.URL, query, schema=schema, records=1,
-                          version=self.version, operation="searchRetrieve")
+        url = self.address(query, schema, records=1,
+                           operation="searchRetrieve")
+        if self.token is not None:
+            url += "&accessToken=" + self.token
         response = Response(sru.retrieve(url))
         return response.total()
 
@@ -86,6 +90,8 @@ class Client:
                               records=size, version=self.version,
                               operation="searchRetrieve") \
                               + "&startRecord=" + str(i)
+            if self.token is not None:
+                url += "&accessToken=" + self.token
             response = Response(sru.retrieve(url))
             result = result + response.items()
         return result
@@ -100,7 +106,11 @@ class Response(xml.Element):
         super().__init__(element, ns=ns)
 
     def total(self):
-        return int(self.find("numberOfRecords").text)
+        numrec = self.find("numberOfRecords")
+        if numrec is not None:
+            return int(numrec.text)
+        else:
+            return self.diagnostics()
 
     def items(self):
         """
@@ -111,20 +121,24 @@ class Response(xml.Element):
             items = [d[0] for d in data]
             return items if len(items) > 1 else items[0]
         else:
-            diag = self.find("diagnostics")
-            if diag is not None:
-                diag = xml.Element(diag)
-                print("DIAGNOSTICS")
-                uri = diag.find("uri")
-                if uri is not None:
-                    print("URI:", uri.text)
-                message = diag.find("message")
-                if message is not None:
-                    print("Message:", message.text)
-                details = diag.find("details")
-                if details is not None:
-                    print("Details:", details.text)
-            return None
+            return self.diagnostics()
+
+    def diagnostics(self):
+        diag = self.find("diagnostics")
+        if diag is not None:
+            diag_ns = diag[0].nsmap["diag"]
+            diag = xml.Element(diag, ns=diag_ns)
+            print("DIAGNOSTICS")
+            uri = diag.find("uri")
+            if uri is not None:
+                print("URI:", uri.text)
+            message = diag.find("message")
+            if message is not None:
+                print("Message:", message.text)
+            details = diag.find("details")
+            if details is not None:
+                print("Details:", details.text)
+        return None
 
 
 class Explain:
