@@ -2,27 +2,10 @@
 # -*- coding: utf-8 -*-
 
 from ..utilities import url
-from ..protocols import http, sru
-from ..schemas import xml
+from ..protocols import http
 
 BASE = "https://data.cerl.org"
 THESAURUS = url.join_paths([BASE, "thesaurus"])
-
-SRU = url.join_paths([THESAURUS, "_sru"])
-VERSION = "1.2"
-SCHEMA = "marcxml"  # ctas, ctas10
-
-
-def explain(store=False, path=""):
-    """
-    get sru explanation
-    """
-    result = sru.explain(SRU, VERSION)
-    if not store:
-        xml.pretty(result)
-    else:
-        file = xml.filepath("sru", "cerl", "", "")
-        xml.writer(result, file, path=path)
 
 
 def _entity(idx, format, style):
