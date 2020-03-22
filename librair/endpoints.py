@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 SRU = {
   "dnb": "https://services.dnb.de/sru/dnb",
   "b3kat": "http://bvbr.bib-bvb.de:5661/bvb01sru",
