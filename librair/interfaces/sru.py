@@ -6,24 +6,6 @@ from ..protocols import sru
 
 from tqdm import tqdm
 
-endpoints = {
-  "b3kat": "http://bvbr.bib-bvb.de:5661/bvb01sru",
-  "cerl-thesaurus": "https://data.cerl.org/thesaurus/_sru",
-  "dnb": "https://services.dnb.de/sru/dnb",
-  "gnd": "https://services.dnb.de/sru/authorities",
-  "isil": "http://services.dnb.de/sru/bib",
-  "zdb": "http://services.dnb.de/sru/zdb",
-  "vd18": "http://sru.gbv.de/vd18",
-  "gjz18": "http://sru.gbv.de/gjz18",
-  "idz": "http://sru.gbv.de/idz",
-  "hebis": "http://cbsopac.rz.uni-frankfurt.de/sru/DB=2.1/",
-  "k10plus": "http://sru.k10plus.de/opac-de-627",
-  "vd17": "http://sru.k10plus.de/vd17",
-  "gvk": "http://sru.k10plus.de/gvk",
-  "kalliope": "http://kalliope-verbund.info/sru",
-  "swb": "https://sru.bsz-bw.de/swb",
-}
-
 
 class Client:
     """
@@ -47,6 +29,12 @@ class Client:
         self.database = self.explain.meta
         self.indexes = self.explain.indexes
         self.schemas = list(self.explain.schemas.keys())
+
+    def secret(self, token):
+        """
+        set access token for sru endpoint
+        """
+        self.token = token
 
     def address(self, query, schema, records=10, operation="searchRetrieve"):
         """
