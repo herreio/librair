@@ -1,55 +1,10 @@
 Catalogs
 ========
 
-bvb module
--------------------
-
-.. automodule:: librair.catalogs.bvb
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-cerl module
--------------------
-
-.. automodule:: librair.catalogs.cerl
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
 ddb module
 -------------------
 
 .. automodule:: librair.catalogs.ddb
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-dnb module
--------------------
-
-.. automodule:: librair.catalogs.dnb
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-gbv module
--------------------
-
-.. automodule:: librair.catalogs.gbv
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-gnd module
--------------------
-
-.. automodule:: librair.catalogs.gnd
     :members:
     :undoc-members:
     :show-inheritance:
@@ -64,73 +19,10 @@ hbz module
     :show-inheritance:
 
 
-hebis module
--------------------
-
-.. automodule:: librair.catalogs.hebis
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-isil module
--------------------
-
-.. automodule:: librair.catalogs.isil
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-k10plus module
--------------------
-
-.. automodule:: librair.catalogs.k10plus
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-kalliope module
-------------------------
-
-.. automodule:: librair.catalogs.kalliope
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-kobv module
--------------------
-
-.. automodule:: librair.catalogs.kobv
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
 mdz module
 -------------------
 
 .. automodule:: librair.catalogs.mdz
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-swb module
--------------------
-
-.. automodule:: librair.catalogs.swb
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-zdb module
--------------------
-
-.. automodule:: librair.catalogs.zdb
     :members:
     :undoc-members:
     :show-inheritance:
