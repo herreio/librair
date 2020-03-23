@@ -27,8 +27,9 @@ IIIF = {
 }
 
 LD = {
-  "isil": "http://ld.zdb-services.de/resource/organisations/",
-  "zdb": "http://ld.zdb-services.de/data/"
+  "dnb": "http://d-nb.info",
+  "zdb": "http://ld.zdb-services.de/data/",
+  "isil": "http://ld.zdb-services.de/resource/organisations/"
 }
 
 OAI = {
