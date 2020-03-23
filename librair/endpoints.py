@@ -1,11 +1,47 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+API = {
+  "lobid": "https://lobid.org/resources/",
+  "ddb": "https://api.deutsche-digitale-bibliothek.de"
+}
+
+LOBID = {
+  "gnd": "http://lobid.org/gnd",
+  "resources": "https://lobid.org/resources",
+  "organisations": "https://lobid.org/organisations"
+}
+
+UNAPI = {
+  "k10plus": "http://unapi.k10plus.de/",
+  "gbv": "http://unapi.gbv.de/"
+}
+
+HYDRA = {
+  "isil": "https://sigel.staatsbibliothek-berlin.de/api/hydra/",
+  "zdb": "https://www.zeitschriftendatenbank.de/api/hydra/"
+}
+
+IIIF = {
+  "ds": "https://api.digitale-sammlungen.de/iiif"
+}
+
+LD = {
+  "isil": "http://ld.zdb-services.de/resource/organisations/",
+  "zdb": "http://ld.zdb-services.de/data/"
+}
+
+OAI = {
+  "dnb": "http://services.dnb.de/oai/repository",
+  "b3kat": "http://bvbr.bib-bvb.de:8991/aleph-cgi/oai/oai_opendata.pl"
+}
+
 SRU = {
   "dnb": "https://services.dnb.de/sru/dnb",
   "b3kat": "http://bvbr.bib-bvb.de:5661/bvb01sru",
   "kobv": "http://z3950.kobv.de/k2",
   "hebis": "http://cbsopac.rz.uni-frankfurt.de/sru/DB=2.1/",
+  "hebis-gbv": "http://sru.gbv.de/hebis",
   "swb": "https://sru.bsz-bw.de/swb",
   "gvk": "http://sru.k10plus.de/gvk",
   "k10plus": "http://sru.k10plus.de/opac-de-627",
