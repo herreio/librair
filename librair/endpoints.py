@@ -18,8 +18,8 @@ UNAPI = {
 }
 
 HYDRA = {
-  "isil": "https://sigel.staatsbibliothek-berlin.de/api/hydra/",
-  "zdb": "https://www.zeitschriftendatenbank.de/api/hydra/"
+  "zdb": "https://www.zeitschriftendatenbank.de/api/hydra/",
+  "isil": "https://sigel.staatsbibliothek-berlin.de/api/hydra/"
 }
 
 IIIF = {
