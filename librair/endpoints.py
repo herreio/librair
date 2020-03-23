@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-API = {
-  "lobid": "https://lobid.org/resources/",
-  "ddb": "https://api.deutsche-digitale-bibliothek.de"
+DDB = {
+  "items": "https://api.deutsche-digitale-bibliothek.de/items",
+  "search": "https://api.deutsche-digitale-bibliothek.de/search"
 }
 
 LOBID = {
@@ -12,9 +12,13 @@ LOBID = {
   "organisations": "https://lobid.org/organisations"
 }
 
+SPARQL = {
+  "b3kat": "https://lod.b3kat.de/sparql"
+}
+
 UNAPI = {
-  "k10plus": "http://unapi.k10plus.de/",
-  "gbv": "http://unapi.gbv.de/"
+  "k10plus": "http://unapi.k10plus.de",
+  "gbv": "http://unapi.gbv.de"
 }
 
 HYDRA = {
@@ -44,11 +48,16 @@ SRU = {
   "hebis": "http://cbsopac.rz.uni-frankfurt.de/sru/DB=2.1/",
   "hebis-gbv": "http://sru.gbv.de/hebis",
   "swb": "https://sru.bsz-bw.de/swb",
+  "swb-gbv": "http://sru.gbv.de/swb",
   "gvk": "http://sru.k10plus.de/gvk",
   "k10plus": "http://sru.k10plus.de/opac-de-627",
+  "stabikat": "http://sru.gbv.de/stabikat",
   "zdb": "http://services.dnb.de/sru/zdb",
   "gnd": "https://services.dnb.de/sru/authorities",
+  "ognd": "https://sru.bsz-bw.de/ognd",
+  "ognd-gbv": "http://sru.gbv.de/ognd",
   "isil": "http://services.dnb.de/sru/bib",
+  "hpb": "http://sru.gbv.de/hpb",
   "cerl-thesaurus": "https://data.cerl.org/thesaurus/_sru",
   "kalliope": "http://kalliope-verbund.info/sru",
   "vd17": "http://sru.k10plus.de/vd17",
