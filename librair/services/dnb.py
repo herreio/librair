@@ -40,7 +40,7 @@ def request(idn, schema="lds"):
     url = address(idn, schema)
     if url is not None:
         response = http.get_request(url)
-        if "xml" in schema:
+        if "xml" in schema or "frame" in schema:
             return http.response_xml(response)
         else:
             return http.response_text(response)
