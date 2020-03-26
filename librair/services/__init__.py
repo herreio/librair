@@ -2,3 +2,4 @@
 # -*- coding: utf-8 -*-
 
 from . import cerl
+from . import viaf
