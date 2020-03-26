@@ -14,6 +14,11 @@ cerl module
     :undoc-members:
     :show-inheritance:
 
+.. automodule:: librair.services.entityfacts
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 .. automodule:: librair.services.gnd
     :members:
     :undoc-members:
