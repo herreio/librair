@@ -3,3 +3,4 @@
 
 from . import cerl
 from . import viaf
+from . import gnd
