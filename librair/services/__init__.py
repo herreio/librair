@@ -5,3 +5,4 @@ from . import cerl
 from . import viaf
 from . import gnd
 from . import zdb
+from . import dnb
