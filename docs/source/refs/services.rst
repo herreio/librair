@@ -2,32 +2,52 @@ Services
 ========
 
 cerl module
----------------------
+------------
 
 .. automodule:: librair.services.cerl
     :members:
     :undoc-members:
     :show-inheritance:
 
+
+dnb module
+-----------
+
 .. automodule:: librair.services.dnb
     :members:
     :undoc-members:
     :show-inheritance:
+
+
+entityfacts module
+-------------------
 
 .. automodule:: librair.services.entityfacts
     :members:
     :undoc-members:
     :show-inheritance:
 
+
+gnd module
+------------
+
 .. automodule:: librair.services.gnd
     :members:
     :undoc-members:
     :show-inheritance:
 
+
+viaf module
+---------------------
+
 .. automodule:: librair.services.viaf
     :members:
     :undoc-members:
     :show-inheritance:
+
+
+zdb module
+---------------------
 
 .. automodule:: librair.services.zdb
     :members:
