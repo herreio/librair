@@ -29,11 +29,11 @@ def request(idn, schema="rdf"):
 
     supported schemas:
 
-        ID      FORMAT
-        marc21  xml
-        viaf    xml
-        rdf     xml
-        links   json
+        ID      TYPE
+        marc21  lxml.etree.Element
+        viaf    lxml.etree.Element
+        rdf     lxml.etree.Element
+        links   dict
     """
     url = address(idn, schema)
     if url is not None:

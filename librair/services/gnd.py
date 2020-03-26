@@ -27,13 +27,13 @@ def request(idn, schema="lds"):
 
     supported schemas:
 
-        ID        FORMAT
-        marcxml   xml
-        lds       ttl
+        ID        TYPE
+        marcxml   lxml.etree.Element
+        lds       str
 
     to do:
 
-        - handle RDF (Turtle)
+        - handle lds (RDF Turtle)
     """
     url = address(idn, schema)
     if url is not None:
