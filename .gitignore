@@ -4,6 +4,7 @@ secret.json
 # development files / folders
 _/
 dev/
+*-dev/
 dev.*
 *-dev.*
 *_dev.*
