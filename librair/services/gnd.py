@@ -17,6 +17,9 @@ def address(idn, schema):
     """
     if schema not in SCHEMA:
         print("schema not supported!")
+        print("choose out of:")
+        for s in SCHEMA:
+            print("\t", s)
         return None
     return "{0}/{1}/about/{2}".format(BASE, idn, schema)
 
