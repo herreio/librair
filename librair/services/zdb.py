@@ -18,7 +18,7 @@ def address(idn, schema):
         print("schema not supported!\n")
         print("choose out of:\n")
         for s in SCHEMA:
-            print("\t", s)
+            print("\t\t", s)
         print("")
         return None
     return "{0}/{1}/{2}.{3}".format(BASE, "data", idn, schema)
@@ -26,7 +26,7 @@ def address(idn, schema):
 
 def request(idn, schema="jsonld"):
     """
-    request data given by idn in given schema from given base
+    request data specified by idn in given schema
 
     supported schemas:
 
@@ -45,14 +45,12 @@ def request(idn, schema="jsonld"):
             return http.response_xml(res)
         else:
             return http.response_text(res)
-    else:
-        return url
 
 
 def store(idn, schema="jsonld", path="."):
     """
-    request data specified by idn and schema
-    afterwards save it to file at path
+    request data specified by idn in given schema
+    and save it to file at path
     """
     url = address(idn, schema)
     if url is not None:
