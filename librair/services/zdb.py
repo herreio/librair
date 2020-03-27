@@ -57,7 +57,7 @@ def store(idn, schema="jsonld", path="."):
     url = address(idn, schema)
     if url is not None:
         fp = idn + "." + schema
-        print("store:\t", fp)
+        print("file:\t", fp)
         print("path:\t", path)
         fp = path + "/" + fp
         urlretrieve(url, fp)
