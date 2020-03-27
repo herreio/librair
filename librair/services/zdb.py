@@ -1,4 +1,9 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 from ..protocols import http
+
+from urllib.request import URLopener
 
 DB = ["data", "resource"]
 BASE = "https://ld.zdb-services.de"
@@ -43,3 +48,16 @@ def request(idn, schema="jsonld"):
             return http.response_text(res)
     else:
         return url
+
+
+def store(idn, schema="jsonld", path="."):
+    """
+    request data specified by idn and schema
+    afterwards save it to file at path
+    """
+    data = URLopener()
+    url = address(idn, schema)
+    if url is not None:
+        fp = idn + "." + schema
+        fp = path + "/" + fp
+        data.retrieve(url, fp)
