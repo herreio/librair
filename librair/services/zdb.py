@@ -24,9 +24,9 @@ def address(idn, schema):
     return "{0}/{1}/{2}.{3}".format(BASE, "data", idn, schema)
 
 
-def request(idn, schema="jsonld"):
+def retrieve(idn, schema="jsonld"):
     """
-    request data specified by idn in given schema
+    retrieve data specified by idn in given schema
 
     supported schemas:
 
