@@ -81,7 +81,11 @@ class Client:
             if self.token is not None:
                 url += "&accessToken=" + self.token
             response = Response(sru.retrieve(url))
-            result = result + response.items()
+            items = response.items()
+            if items is not None:
+                result += items
+            else:
+                return result
         return result
 
 
