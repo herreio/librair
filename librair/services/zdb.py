@@ -1,7 +1,7 @@
 from ..protocols import http
 
 DB = ["data", "resource"]
-BASE = "http://ld.zdb-services.de"
+BASE = "https://ld.zdb-services.de"
 SCHEMA = ["html", "rdf", "ttl", "jsonld"]
 EXAMPLE = "331668-3"
 
