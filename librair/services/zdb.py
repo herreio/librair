@@ -3,9 +3,8 @@
 
 from ..protocols import http
 
-from urllib.request import URLopener
+from urllib.request import urlretrieve
 
-DB = ["data", "resource"]
 BASE = "https://ld.zdb-services.de"
 SCHEMA = ["html", "rdf", "ttl", "jsonld"]
 EXAMPLE = "331668-3"
@@ -13,7 +12,7 @@ EXAMPLE = "331668-3"
 
 def address(idn, schema):
     """
-    get url of item with given idn in given schema
+    get url of item specified by idn in given schema
     """
     if schema not in SCHEMA:
         print("schema not supported!\n")
@@ -55,9 +54,10 @@ def store(idn, schema="jsonld", path="."):
     request data specified by idn and schema
     afterwards save it to file at path
     """
-    data = URLopener()
     url = address(idn, schema)
     if url is not None:
         fp = idn + "." + schema
+        print("store:\t", fp)
+        print("path:\t", path)
         fp = path + "/" + fp
-        data.retrieve(url, fp)
+        urlretrieve(url, fp)
