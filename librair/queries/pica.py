@@ -14,15 +14,31 @@ def title(char):
 def place(name):
     """
     get query for place given by name
+
+    used by:
+        - vd18
     """
     return "pica.plc" + quote("=") + name
 
 
 def publisher(name):
     """
-    get query for publisher given by name
+    get query for publisher / publication place given by name
+
+    used by:
+        - vd18
     """
     return "pica.pub" + quote("=") + name
+
+
+def veroeffentlichungsort(name):
+    """
+    get query for publication place given by name
+
+    used by:
+        - vd17
+    """
+    return "pica.vlo" + quote("=") + name
 
 
 def ort(name):
