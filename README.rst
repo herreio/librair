@@ -22,7 +22,7 @@ You can simply install this package via `PyPI <https://pypi.org/project/librair/
 
 .. code-block:: shell
 
-    pip install -e https://github.com/herreio/librair.git#egg=librair
+    pip install -e git+https://github.com/herreio/librair.git#egg=librair
 
 ... or by cloning the repository:
 
