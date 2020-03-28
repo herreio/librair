@@ -53,7 +53,7 @@ def filepath(term, base, schema, service="sru"):
     return main + ".xml"
 
 
-def writer(tree, file, path="res"):
+def writer(tree, file, path="."):
     """
     write given element tree to file at path
     """

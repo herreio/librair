@@ -22,7 +22,7 @@ def filepath(term, base, schema, service="api"):
     return main + ".json"
 
 
-def writer(data, file, path="res"):
+def writer(data, file, path="."):
     """
     write given dict data to json file at path
     """
