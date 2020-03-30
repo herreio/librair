@@ -3,7 +3,9 @@
 
 from ..protocols import http
 
-BASE = "http://www.worldcat.org/oclc"
+from urllib.request import urlretrieve
+
+BASE = "https://www.worldcat.org/oclc"
 SCHEMA = ["ttl", "jsonld", "rdf", "nt"]
 EXAMPLE = "78515859"
 
@@ -49,3 +51,15 @@ def request(idn, schema="jsonld"):
             return http.response_text(res)
     else:
         return url
+
+
+def store(idn, schema="rdf", path="."):
+    """
+    request data specified by idn and schema
+    afterwards save it to file at path
+    """
+    url = address(idn, schema)
+    if url is not None:
+        fp = idn + "." + schema
+        fp = path + "/" + fp
+        urlretrieve(url, fp)
