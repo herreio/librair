@@ -3,6 +3,8 @@
 
 from ..protocols import http
 
+from urllib.request import urlretrieve
+
 BASE = "https://viaf.org/viaf"
 SCHEMA = ["marc21", "viaf", "rdf", "links"]
 EXAMPLE = "32049320"
@@ -44,3 +46,15 @@ def request(idn, schema="rdf"):
             return http.response_json(response)
     else:
         return url
+
+
+def store(idn, schema="rdf", path="."):
+    """
+    request data specified by idn and schema
+    afterwards save it to file at path
+    """
+    url = address(idn, schema)
+    if url is not None:
+        fp = idn + "." + schema
+        fp = path + "/" + fp
+        urlretrieve(url, fp)
