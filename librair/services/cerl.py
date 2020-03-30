@@ -1,60 +1,85 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from ..utilities import url
 from ..protocols import http
 
-BASE = "https://data.cerl.org"
-THESAURUS = url.join_paths([BASE, "thesaurus"])
+from urllib.request import urlretrieve
+
+BASE = "https://data.cerl.org/thesaurus"
+SCHEMA = ["rdfxml", "txt", "json"]
+STYLE = ["ttl", "jsonld", "internal"]
+
+CORPORATE = "cnc00019524"
+IMPRINT = "cni00031211"
+LOCATION = "cnl00029460"
+PERSON = "cnp00390358"
 
 
-def _entity(idx, format, style):
+def address(idn, schema, style):
     """
-    request entitiy by given idx in specified format and style
+    get url of item given by idn in given schema (and optional style)
     """
-    _url = "/".join([THESAURUS, idx])
-    _params = url.param("format", format)
+    if schema not in SCHEMA:
+        print("schema not supported!")
+        print("choose out of:")
+        for s in SCHEMA:
+            print("\t\t", s)
+        return None
+    # case: json (jsonld), txt (ttl), txt (internal)
     if style:
-        _style = url.param("style", style)
-        _params = url.join_params([_params, _style])
-        if style == "internal":
-            _params = url.join_params([_params, "pretty"])
+        if style not in STYLE:
+            print("style not supported!")
+            print("choose out of:")
+            for s in STYLE:
+                print("\t\t", s)
+            return None
+        if schema == "internal":
+            return "{0}/{1}?format={2}&style={3}&pretty".format(BASE, idn,
+                                                                schema, style)
+        # case: jsonld or ttl
+        return "{0}/{1}?format={2}&style={3}".format(BASE, idn, schema, style)
+    # case: json, rdfxml, txt [= yml]
     else:
-        if format == "json":
-            _params = url.join_params([_params, "pretty"])
-    _url = url.add_params(_url, _params)
-    _res = http.get_request(_url)
-    if format == "rdfxml":  # RDF-XML
-        return http.response_xml(_res)
-    elif format == "json":  # JSON / JSON-LD
-        return http.response_json(_res)
-    else:                   # RDF-TTL / YAML / CT
-        return http.response_text(_res)
+        if schema == "json":
+            return "{0}/{1}?format={2}&pretty".format(BASE, idn, schema)
+        # case: rdfxml or yml (txt)
+        return "{0}/{1}?format={2}".format(BASE, idn, schema)
+    return "{0}/{1}?format=".format(BASE, idn)
 
 
-def cnc(idx="cnc00019524", format="rdfxml", style=None):
+def retrieve(idn, schema="rdfxml", style=None):
     """
-    request coporate bodies data given by idx in specified format and style
+    retrieve data specified by idn in given schema
+
+    supported schemas:
+
+        SCHEMA       STYLE          TYPE
+        rdfxml       -              etree.Element
+        json         -              dict
+        json         jsonld         dict
+        txt          ttl            str
+        txt          internal       str
     """
-    return _entity(idx, format, style)
+    url = address(idn, schema, style=style)
+    if url is not None:
+        res = http.get_request(url)
+        if schema == "rdfxml":
+            return http.response_xml(res)
+        elif schema == "json":
+            return http.response_json(res)
+        else:
+            return http.response_text(res)
 
 
-def cni(idx="cni00031211", format="rdfxml", style=None):
+def store(idn, schema="json", style=None, path="."):
     """
-    request imprint data given by idx in specified format and style
+    request data specified by idn in given schema
+    and save it to file at path
     """
-    return _entity(idx, format, style)
-
-
-def cnl(idx="cnl00029460", format="rdfxml", style=None):
-    """
-    request location data by given idx in specified format and style
-    """
-    return _entity(idx, format, style)
-
-
-def cnp(idx="cnp00390358", format="rdfxml", style=None):
-    """
-    request person data by given idx in specified format and style
-    """
-    return _entity(idx, format, style)
+    url = address(idn, schema, style)
+    if url is not None:
+        fp = idn + "." + schema
+        print("file:\t", fp)
+        print("path:\t", path)
+        fp = path + "/" + fp
+        urlretrieve(url, fp)
