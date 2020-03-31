@@ -3,7 +3,12 @@
 
 from ..protocols import http
 
+from urllib.request import urlretrieve
+
 BASE = "https://hub.culturegraph.org/entityfacts"
+
+PND = "116473207"
+GKD = "104526539X"
 
 
 def address(idn):
@@ -20,3 +25,14 @@ def request(idn):
     url = address(idn)
     res = http.get_request(url)
     return http.response_json(res)
+
+
+def store(idn, path="."):
+    """
+    request data specified by idn and schema
+    afterwards save it to file at path
+    """
+    url = address(idn)
+    fp = idn + ".json"
+    fp = path + "/" + fp
+    urlretrieve(url, fp)
