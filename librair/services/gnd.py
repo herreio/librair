@@ -3,6 +3,8 @@
 
 from ..protocols import http
 
+from urllib.request import urlretrieve
+
 BASE = "http://d-nb.info/gnd"
 SCHEMA = ["lds", "marcxml"]
 
@@ -47,3 +49,15 @@ def request(idn, schema="lds"):
             return http.response_text(response)
     else:
         return url
+
+
+def store(idn, schema="lds", path="."):
+    """
+    request data specified by idn and schema
+    afterwards save it to file at path
+    """
+    url = address(idn, schema)
+    if url is not None:
+        fp = idn + "." + schema
+        fp = path + "/" + fp
+        urlretrieve(url, fp)
