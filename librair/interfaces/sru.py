@@ -3,6 +3,7 @@
 
 from ..schemas import xml
 from ..protocols import sru
+from ..utilities.url import param
 
 from tqdm import tqdm
 
@@ -35,6 +36,12 @@ class Client:
         set access token for sru endpoint
         """
         self.token = token
+
+    def query(self, index, value):
+        """
+        get query for given index and value
+        """
+        return param(index, value, encode=True)
 
     def address(self, query, schema, records=10, operation="searchRetrieve"):
         """
@@ -113,6 +120,12 @@ class Response(xml.Element):
             items = [d[0] for d in data]
             return items if len(items) > 1 else items[0]
         else:
+            numrec = self.find("numberOfRecords")
+            if numrec is not None:
+                numrec = int(numrec.text)
+                if numrec == 0:
+                    print("no items in response!")
+                    return None
             return self.diagnostics()
 
     def diagnostics(self):
