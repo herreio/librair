@@ -44,7 +44,6 @@ def address(idn, schema, style):
             return "{0}/{1}?format={2}&pretty".format(BASE, idn, schema)
         # case: rdfxml or yml (txt)
         return "{0}/{1}?format={2}".format(BASE, idn, schema)
-    return "{0}/{1}?format=".format(BASE, idn)
 
 
 def retrieve(idn, schema="rdfxml", style=None):
