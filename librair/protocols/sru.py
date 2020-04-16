@@ -3,12 +3,11 @@
 
 from . import http
 
-# ////////////////////// #
-# /// URL PARAMETERS /// #
-# ////////////////////// #
-
 
 def _param(param, value):
+    """
+    create 'parameter=value'
+    """
     return "{0}={1}".format(param, value)
 
 
