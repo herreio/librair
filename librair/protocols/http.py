@@ -9,19 +9,46 @@ def get_request(url, headers={}):
     """
     send http get request to given url with headers (optional)
     """
-    return requests.get(url, headers=headers)
+    try:
+        response = requests.get(url, headers=headers)
+        return response
+    except requests.exceptions.ConnectionError:
+        print("librair.protocols.http.get_request:")
+        print("request failed! connection error...")
+    except requests.exceptions.Timeout:
+        print("librair.protocols.http.get_request:")
+        print("request failed! timeout... try later?")
+    except requests.exceptions.TooManyRedirects:
+        print("librair.protocols.http.get_request:")
+        print("request failed! bad url, try another one!")
+    except requests.exceptions.RequestException:
+        print("librair.protocols.http.get_request:")
+        print("request failed! don't know why...")
+    return None
+
+
+def response_ok(response):
+    if response is None:
+        return False
+    if response.status_code == 200:
+        return True
+    else:
+        print("librair.protocols.http.response_ok:")
+        print("response is not ok!")
+        print("url of request:")
+        print(response.url)
+        print("http status code: ",
+              str(response.status_code))
+        return False
 
 
 def response_text(response):
     """
     get text data from http repsonse
     """
-    if response.status_code == 200:
+    if response_ok(response):
         return response.text
     else:
-        print("something went wrong!")
-        print("http status code: ",
-              str(response.status_code))
         return ""
 
 
@@ -29,12 +56,9 @@ def response_json(response):
     """
     get json data from http repsonse
     """
-    if response.status_code == 200:
+    if response_ok(response):
         return response.json()
     else:
-        print("something went wrong!")
-        print("http status code: ",
-              str(response.status_code))
         return {}
 
 
@@ -42,11 +66,8 @@ def response_xml(response):
     """
     get xml data from http repsonse
     """
-    if response.status_code == 200:
+    if response_ok(response):
         parser = xml.etree.XMLParser(remove_blank_text=True)
         return xml.etree.fromstring(response.content, parser=parser)
     else:
-        print("something went wrong!")
-        print("http status code: ",
-              str(response.status_code))
         return None
