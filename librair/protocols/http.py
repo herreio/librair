@@ -7,7 +7,7 @@ from ..schemas import xml
 
 def get_request(url, headers={}):
     """
-    send http get request to given url with headers (optional)
+    send http get request to given url with (optional) headers
     """
     try:
         response = requests.get(url, headers=headers)
