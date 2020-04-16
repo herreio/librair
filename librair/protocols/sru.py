@@ -8,39 +8,8 @@ from . import http
 # ////////////////////// #
 
 
-def _query(char):
-    """
-    get query created from given chars
-    """
-    return "query=" + char
-
-
-def _version(num):
-    """
-    get version parameter with given number
-    """
-    return "version=" + str(num)
-
-
-def _operation(name):
-    """
-    operation parameter with given name
-    """
-    return "operation=" + name
-
-
-def _schema(name):
-    """
-    schema of records with given name
-    """
-    return "recordSchema=" + name
-
-
-def _maxnum(num):
-    """
-    maximum of records to return
-    """
-    return "maximumRecords=" + str(num)
+def _param(param, value):
+    return "{0}={1}".format(param, value)
 
 
 def _andparam(params):
@@ -49,9 +18,40 @@ def _andparam(params):
     """
     return "&".join(params)
 
-# ////////////////////// #
-# /// DATA RETRIEVAL /// #
-# ////////////////////// #
+
+def _query(char):
+    """
+    get query created from given chars
+    """
+    return _param("query", char)
+
+
+def _version(num):
+    """
+    get version parameter with given number
+    """
+    return _param("version", str(num))
+
+
+def _operation(name):
+    """
+    operation parameter with given name
+    """
+    return _param("operation", name)
+
+
+def _schema(name):
+    """
+    schema of records with given name
+    """
+    return _param("recordSchema", name)
+
+
+def _maxnum(num):
+    """
+    maximum of records to return
+    """
+    return _param("maximumRecords", str(num))
 
 
 def _build(version, operation, query, schema, records):
@@ -80,7 +80,7 @@ def explain(base, version):
     """
     ver = _version(version)
     op = _operation("explain")
-    url = base + "?" + _andparam([ver, op])
+    url = "{0}?{1}".format(base, _andparam([ver, op]))
     return retrieve(url)
 
 
