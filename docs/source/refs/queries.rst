@@ -10,15 +10,6 @@ dc module
     :show-inheritance:
 
 
-ddb module
----------------------
-
-.. automodule:: librair.queries.ddb
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
 dnb module
 ---------------------
 
@@ -32,24 +23,6 @@ ead module
 ---------------------
 
 .. automodule:: librair.queries.ead
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-kobv module
----------------------
-
-.. automodule:: librair.queries.kobv
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-lobid module
----------------------
-
-.. automodule:: librair.queries.lobid
     :members:
     :undoc-members:
     :show-inheritance:
