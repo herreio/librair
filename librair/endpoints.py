@@ -1,44 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-DDB = {
-  "items": "https://api.deutsche-digitale-bibliothek.de/items",
-  "search": "https://api.deutsche-digitale-bibliothek.de/search"
-}
-
-LOBID = {
-  "gnd": "http://lobid.org/gnd",
-  "resources": "https://lobid.org/resources",
-  "organisations": "https://lobid.org/organisations"
-}
-
-SPARQL = {
-  "b3kat": "https://lod.b3kat.de/sparql"
-}
-
 UNAPI = {
   "k10plus": "http://unapi.k10plus.de",
   "gbv": "http://unapi.gbv.de"
 }
 
 HYDRA = {
-  "zdb": "https://www.zeitschriftendatenbank.de/api/hydra/",
-  "isil": "https://sigel.staatsbibliothek-berlin.de/api/hydra/"
-}
-
-IIIF = {
-  "ds": "https://api.digitale-sammlungen.de/iiif"
+  "zdb": "https://www.zeitschriftendatenbank.de/api/hydra",
+  "isil": "https://sigel.staatsbibliothek-berlin.de/api/hydra"
 }
 
 LD = {
   "dnb": "http://d-nb.info",
   "zdb": "http://ld.zdb-services.de/data/",
   "isil": "http://ld.zdb-services.de/resource/organisations/"
-}
-
-OAI = {
-  "dnb": "http://services.dnb.de/oai/repository",
-  "b3kat": "http://bvbr.bib-bvb.de:8991/aleph-cgi/oai/oai_opendata.pl"
 }
 
 SRU = {
