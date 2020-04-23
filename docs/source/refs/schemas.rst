@@ -9,6 +9,14 @@ json module
     :undoc-members:
     :show-inheritance:
 
+plain module
+---------------------
+
+.. automodule:: librair.schemas.plain
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 xml module
 ---------------------

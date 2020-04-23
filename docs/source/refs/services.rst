@@ -36,6 +36,21 @@ gnd module
     :undoc-members:
     :show-inheritance:
 
+oclc module
+---------------------
+
+.. automodule:: librair.services.oclc
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+seealso module
+---------------------
+
+.. automodule:: librair.services.seealso
+    :members:
+    :undoc-members:
+    :show-inheritance:
 
 viaf module
 ---------------------
