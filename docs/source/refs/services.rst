@@ -36,6 +36,14 @@ gnd module
     :undoc-members:
     :show-inheritance:
 
+kalliope module
+------------
+
+.. automodule:: librair.services.kalliope
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 oclc module
 ---------------------
 
