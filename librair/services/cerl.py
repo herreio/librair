@@ -46,7 +46,7 @@ def address(idn, schema, style):
         return "{0}/{1}?format={2}".format(BASE, idn, schema)
 
 
-def retrieve(idn, schema="rdfxml", style=None):
+def request(idn, schema="rdfxml", style=None):
     """
     retrieve data specified by idn in given schema
 
