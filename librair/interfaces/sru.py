@@ -3,7 +3,6 @@
 
 from ..schemas import xml
 from ..protocols import sru
-from ..utilities.url import param
 
 from tqdm import tqdm
 
@@ -41,7 +40,7 @@ class Client:
         """
         get query for given index and value
         """
-        return param(index, value, encode=True)
+        return "{0}%3D{1}".format(index, value)
 
     def address(self, query, schema, records=10, operation="searchRetrieve"):
         """
