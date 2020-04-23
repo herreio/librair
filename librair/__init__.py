@@ -6,5 +6,4 @@ from . import protocols
 from . import queries
 from . import schemas
 from . import services
-from . import utilities
 from . import endpoints
