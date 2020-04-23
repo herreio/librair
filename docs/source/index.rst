@@ -6,7 +6,6 @@ Welcome to librair's documentation!
 .. toctree::
    :maxdepth: 1
 
-   refs/catalogs
    refs/services
    refs/interfaces
    refs/protocols
