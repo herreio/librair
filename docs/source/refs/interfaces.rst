@@ -1,6 +1,14 @@
 Interfaces
 ==========
 
+hydra module
+-------------------
+
+.. automodule:: librair.interfaces.hydra
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 sru module
 -------------------
 
