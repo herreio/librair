@@ -38,13 +38,13 @@ class Client:
                 formats[n]['docs'] = None
         return formats
 
-    def retrieve(self, item, schema):
+    def request(self, idn, schema):
         """
-        retrieve data of item given by id, in given schema
+        retrieve data of item given by idn, in given schema
         """
         if schema in self.formats:
             schematype = self.formats[schema]['type']
-            url = self._base(item, schema)
+            url = self._base(idn, schema)
             response = http.get_request(url)
             if response is not None:
                 if "xml" in schematype:
