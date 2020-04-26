@@ -1,8 +1,8 @@
 .. role:: shell(code)
    :language: shell
 
-Librair – Library Information Retrieval
-=======================================
+Librair Vniuersal
+=================
 
 Introduction
 ------------
