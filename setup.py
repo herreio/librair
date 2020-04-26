@@ -9,11 +9,11 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
     name="librair",
-    version="2020.04.24",
+    version="2020.04.26",
     author="Donatus Herre",
     author_email="pypi@herre.io",
     license="MIT",
-    description="library information retrieval client (under development)",
+    description="library retrieval client (under development)",
     long_description=README,
     url="https://github.com/herreio/librair",
     packages=setuptools.find_packages(),
