@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 from ..protocols import http
+
+from tqdm import tqdm
 
 
 class Client:
@@ -12,7 +13,10 @@ class Client:
     def __init__(self, URL):
         self.URL = URL
 
-    def _base(self, query, size, page):
+    def address(self, query, size, page):
+        """
+        generate request url for given query, size and page
+        """
         return "{0}/?q={1}&size={2}&page={3}".format(self.URL,
                                                      query, size, page)
 
@@ -20,9 +24,41 @@ class Client:
         """
         retrieve data for given query in size from page
         """
-        url = self._base(query, size, page)
+        url = self.address(query, size, page)
         response = http.get_request(url)
-        return http.response_json(response)
+        return Response(http.response_json(response)).members()
+
+    def total(self, query):
+        """
+        determine total number of results for given query
+        """
+        url = self.address(query, 1, 1)
+        response = http.get_request(url)
+        return Response(http.response_json(response)).total()
+
+    def scroll(self, query, size=100, page=1):
+        """
+        scroll items matching given query, in steps specified by size,
+        starting from given page
+        """
+        members = []
+        total = self.total(query)
+        if total == 0:
+            return members
+        pbar = tqdm(total=total)
+        url = self.address(query, size, page)
+        while url != "":
+            result = http.get_request(url)
+            result = Response(http.response_json(result))
+            addnew = result.members()
+            if addnew != []:
+                members += addnew
+                pbar.update(len(addnew))
+            else:
+                url = ""
+            url = result.view_next()
+        pbar.close()
+        return members
 
     def request(self, idn):
         """
@@ -31,3 +67,25 @@ class Client:
         url = "{0}/{1}/{2}".format(self.URL, "resource", idn)
         response = http.get_request(url)
         return http.response_json(response)
+
+
+class Response:
+
+    def __init__(self, data):
+        self.data = data
+
+    def total(self):
+        if 'totalItems' in self.data:
+            return int(self.data['totalItems'])
+        return 0
+
+    def members(self):
+        if 'member' in self.data:
+            return self.data['member']
+        return []
+
+    def view_next(self):
+        if 'view' in self.data:
+            if 'next' in self.data['view']:
+                return self.data['view']['next']
+        return ""
