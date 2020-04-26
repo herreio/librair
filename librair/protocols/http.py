@@ -48,8 +48,7 @@ def response_text(response):
     """
     if response_ok(response):
         return response.text
-    else:
-        return ""
+    return ""
 
 
 def response_json(response):
@@ -57,9 +56,9 @@ def response_json(response):
     get json data from http repsonse
     """
     if response_ok(response):
-        return response.json()
-    else:
-        return {}
+        if response.json() is not None:
+            return response.json()
+    return {}
 
 
 def response_xml(response):
