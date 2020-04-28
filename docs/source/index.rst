@@ -11,6 +11,7 @@ Welcome to librair's documentation!
    refs/protocols
    refs/queries
    refs/schemas
+   refs/parsers
 
 Indices and tables
 ==================
