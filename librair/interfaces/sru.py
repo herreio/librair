@@ -121,7 +121,7 @@ class Response(xml.Element):
         else:
             numrec = self.find("numberOfRecords")
             if numrec is not None:
-                numrec = int(numrec.text)
+                numrec = int(numrec.text) if numrec.text is not None else 0
                 if numrec == 0:
                     print("no items in response!")
                     return None
