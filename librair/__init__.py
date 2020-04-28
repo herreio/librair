@@ -7,3 +7,4 @@ from . import queries
 from . import schemas
 from . import services
 from . import endpoints
+from . import parsers
