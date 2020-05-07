@@ -5,13 +5,12 @@ import requests
 from ..schemas import xml
 
 
-def get_request(url, headers={'Connection': 'close'}):
+def get_request(url, headers={}):
     """
     send http get request to given url with (optional) headers
     """
     try:
-        response = requests.get(url, headers=headers)
-        return response
+        return requests.get(url, headers=headers)
     except requests.exceptions.ConnectionError:
         print("librair.protocols.http.get_request:")
         print("request failed! connection error...")
