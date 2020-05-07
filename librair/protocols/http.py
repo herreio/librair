@@ -5,7 +5,7 @@ import requests
 from ..schemas import xml
 
 
-def get_request(url, headers={}):
+def get_request(url, headers={'Connection': 'close'}):
     """
     send http get request to given url with (optional) headers
     """
