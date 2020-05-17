@@ -50,19 +50,19 @@ def request(idn, schema="rdfxml", style=None):
     """
     retrieve data specified by idn in given schema and (optional) style
 
-    +--------+---------+-------------+
-    | SCHEMA | STYLE   | RETURN TYPE |
-    +========+=========+=============+
-    | rdfxml | None    |etree.Element|
-    +--------+---------+-------------+
-    | json   | None    |  dict       |
-    +--------+---------+-------------+
-    | json   | jsonld  |  dict       |
-    +--------+---------+-------------+
-    | txt    | ttl     |  str        |
-    +--------+---------+-------------+
-    | txt    | internal|  str        |
-    +--------+---------+-------------+
+    +--------+---------+--------------------+
+    | SCHEMA | STYLE   | RETURN TYPE        |
+    +========+=========+====================+
+    | rdfxml | None    | lxml.etree.Element |
+    +--------+---------+--------------------+
+    | json   | None    |  dict              |
+    +--------+---------+--------------------+
+    | json   | jsonld  |  dict              |
+    +--------+---------+--------------------+
+    | txt    | ttl     |  str               |
+    +--------+---------+--------------------+
+    | txt    | internal|  str               |
+    +--------+---------+--------------------+
 
     """
     url = address(idn, schema, style=style)
