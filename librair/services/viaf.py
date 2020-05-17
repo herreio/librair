@@ -12,7 +12,7 @@ EXAMPLE = "32049320"
 
 def address(idn, schema):
     """
-    get url of entity given by idn in given schema
+    get url of entity specified by idn in given schema
     """
     if schema not in SCHEMA:
         print("schema not supported!")
@@ -27,15 +27,19 @@ def address(idn, schema):
 
 def request(idn, schema="rdf"):
     """
-    request data of entity given by idn in given schema
+    request data of entity specified by idn in given schema
 
-    supported schemas:
-
-        ID      TYPE
-        marc21  lxml.etree.Element
-        viaf    lxml.etree.Element
-        rdf     lxml.etree.Element
-        links   dict
+    +----------+--------------------+
+    | SCHEMA   | RETURN TYPE        |
+    +==========+====================+
+    | links    | dict               |
+    +----------+--------------------+
+    | marc21   | lxml.etree.Element |
+    +----------+--------------------+
+    | rdf      | lxml.etree.Element |
+    +----------+--------------------+
+    | viaf     | lxml.etree.Element |
+    +----------+--------------------+
     """
     url = address(idn, schema)
     if url is not None:
@@ -50,8 +54,8 @@ def request(idn, schema="rdf"):
 
 def store(idn, schema="rdf", path="."):
     """
-    request data specified by idn and schema
-    afterwards save it to file at path
+    | request data of entity specified by idn in given schema
+    | afterwards save it to directory at path
     """
     url = address(idn, schema)
     if url is not None:

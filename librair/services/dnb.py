@@ -12,7 +12,7 @@ EXAMPLE = "575235691"
 
 def address(idn, schema):
     """
-    get url of item specified by idn in given schema
+    get url of entity specified by idn in given schema
     """
     if schema not in SCHEMA:
         print("schema not supported!")
@@ -25,7 +25,7 @@ def address(idn, schema):
 
 def request(idn, schema="lds"):
     """
-    request data of item specified by idn in given schema
+    request data of entity specified by idn in given schema
 
     +----------+--------------------+
     | SCHEMA   | RETURN TYPE        |
@@ -55,7 +55,7 @@ def request(idn, schema="lds"):
 
 def store(idn, schema="lds", path="."):
     """
-    | request data of item specified by idn in given schema
+    | request data of entity specified by idn in given schema
     | afterwards save it to directory at path
     """
     url = address(idn, schema)

@@ -63,7 +63,6 @@ def request(idn, schema="rdfxml", style=None):
     +--------+---------+--------------------+
     | txt    | internal|  str               |
     +--------+---------+--------------------+
-
     """
     url = address(idn, schema, style=style)
     if url is not None:

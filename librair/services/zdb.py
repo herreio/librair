@@ -12,7 +12,7 @@ EXAMPLE = "331668-3"
 
 def address(idn, schema):
     """
-    get url of item specified by idn in given schema
+    get url of entity specified by idn in given schema
     """
     if schema not in SCHEMA:
         print("schema not supported!\n")
@@ -26,15 +26,19 @@ def address(idn, schema):
 
 def request(idn, schema="jsonld"):
     """
-    retrieve data specified by idn in given schema
+    request data of entity specified by idn in given schema
 
-    supported schemas:
-
-        ID          TYPE
-        html        str
-        rdf         etree.Element
-        ttl         str
-        jsonld      dict
+    +----------+--------------------+
+    | SCHEMA   | RETURN TYPE        |
+    +==========+====================+
+    | html     | str                |
+    +----------+--------------------+
+    | rdf      | lxml.etree.Element |
+    +----------+--------------------+
+    | ttl      | str                |
+    +----------+--------------------+
+    | jsonld   | dict               |
+    +----------+--------------------+
     """
     url = address(idn, schema)
     if url is not None:
@@ -49,8 +53,8 @@ def request(idn, schema="jsonld"):
 
 def store(idn, schema="jsonld", path="."):
     """
-    request data specified by idn in given schema
-    and save it to file at path
+    | request data of entity specified by idn in given schema
+    | afterwards save it to directory at path
     """
     url = address(idn, schema)
     if url is not None:

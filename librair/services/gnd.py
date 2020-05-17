@@ -15,7 +15,7 @@ SWD = "4133333-0"
 
 def address(idn, schema):
     """
-    get url of entity given by idn in given schema
+    get url of entity specified by idn in given schema
     """
     if schema not in SCHEMA:
         print("schema not supported!")
@@ -28,13 +28,15 @@ def address(idn, schema):
 
 def request(idn, schema="lds"):
     """
-    request data of entity given by idn in given schema
+    request data of entity specified by idn in given schema
 
-    supported schemas:
-
-        ID        TYPE
-        marcxml   lxml.etree.Element
-        lds       str
+    +----------+--------------------+
+    | SCHEMA   | RETURN TYPE        |
+    +==========+====================+
+    | lds      |  str               |
+    +----------+--------------------+
+    | marcxml  | lxml.etree.Element |
+    +----------+--------------------+
 
     to do:
 
@@ -53,8 +55,8 @@ def request(idn, schema="lds"):
 
 def store(idn, schema="lds", path="."):
     """
-    request data specified by idn and schema
-    afterwards save it to file at path
+    | request data of entity specified by idn in given schema
+    | afterwards save it to directory at path
     """
     url = address(idn, schema)
     if url is not None:
