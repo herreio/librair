@@ -48,7 +48,7 @@ def address(idn, schema, style):
 
 def request(idn, schema="rdfxml", style=None):
     """
-    retrieve data specified by idn in given schema and (optional) style
+    request data specified by idn in given schema and (optional) style
 
     +--------+---------+--------------------+
     | SCHEMA | STYLE   | RETURN TYPE        |
