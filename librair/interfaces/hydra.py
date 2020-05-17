@@ -15,7 +15,7 @@ class Client:
 
     def address(self, query, size, page):
         """
-        generate request url for given query, size and page
+        get url for given query, size and page
         """
         return "{0}/?q={1}&size={2}&page={3}".format(self.URL,
                                                      query, size, page)
