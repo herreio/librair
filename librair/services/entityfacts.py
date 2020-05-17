@@ -13,14 +13,14 @@ GKD = "104526539X"
 
 def address(idn):
     """
-    get url of entity given by idn
+    get url of entity specified by idn
     """
     return "{0}/{1}".format(BASE, idn)
 
 
 def request(idn):
     """
-    request data of entity given by idn
+    request data of entity specified by idn
     """
     url = address(idn)
     res = http.get_request(url)
@@ -29,8 +29,8 @@ def request(idn):
 
 def store(idn, path="."):
     """
-    request data specified by idn and schema
-    afterwards save it to file at path
+    | request data specified by idn
+    | afterwards save it to directory at path
     """
     url = address(idn)
     fp = idn + ".json"
