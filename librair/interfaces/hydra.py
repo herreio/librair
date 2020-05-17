@@ -38,8 +38,8 @@ class Client:
 
     def scroll(self, query, size=100, page=1):
         """
-        scroll items matching given query, in steps specified by size,
-        starting from given page
+        | scroll items matching given query, in steps specified by size,
+        | starting from given page
         """
         members = []
         total = self.total(query)
@@ -70,21 +70,33 @@ class Client:
 
 
 class Response:
+    """
+    wrapper for json response from hydra interface
+    """
 
     def __init__(self, data):
         self.data = data
 
     def total(self):
+        """
+        get total number of records from response
+        """
         if 'totalItems' in self.data:
             return int(self.data['totalItems'])
         return 0
 
     def members(self):
+        """
+        get record data from response
+        """
         if 'member' in self.data:
             return self.data['member']
         return []
 
     def view_next(self):
+        """
+        get url of next items from result set
+        """
         if 'view' in self.data:
             if 'next' in self.data['view']:
                 return self.data['view']['next']

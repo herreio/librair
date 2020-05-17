@@ -16,10 +16,6 @@ class Client:
         self.VAR = VAR
         self.formats = self._formats()
 
-    def _base(self, item, schema):
-        return self.URL + "/?id=" + self.DB + ":" + \
-                 self.VAR + ":" + item + "&format=" + schema
-
     def _formats(self):
         response = http.get_request(self.URL)
         response = http.response_xml(response)
@@ -38,13 +34,20 @@ class Client:
                 formats[n]['docs'] = None
         return formats
 
+    def address(self, idn, schema):
+        """
+        get url of entity specified by idn in given schema
+        """
+        return self.URL + "/?id=" + self.DB + ":" + \
+                 self.VAR + ":" + idn + "&format=" + schema
+
     def request(self, idn, schema):
         """
-        retrieve data of item given by idn, in given schema
+        request data of entity specified by idn in given schema
         """
         if schema in self.formats:
             schematype = self.formats[schema]['type']
-            url = self._base(idn, schema)
+            url = self.address(idn, schema)
             response = http.get_request(url)
             if response is not None:
                 if "xml" in schematype:

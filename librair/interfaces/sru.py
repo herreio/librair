@@ -104,6 +104,9 @@ class Response(xml.Element):
         super().__init__(element, ns=ns)
 
     def total(self):
+        """
+        get total number of records from response
+        """
         numrec = self.find("numberOfRecords")
         if numrec is not None:
             return int(numrec.text)
@@ -128,6 +131,9 @@ class Response(xml.Element):
             return self.diagnostics()
 
     def diagnostics(self):
+        """
+        get diagnostics for response
+        """
         diag = self.find("diagnostics")
         if diag is not None:
             diag_ns = diag[0].nsmap["diag"]
