@@ -29,7 +29,7 @@ def request(idn):
 
 def store(idn, path="."):
     """
-    | request data specified by idn
+    | request data of entity specified by idn
     | afterwards save it to directory at path
     """
     url = address(idn)
