@@ -79,7 +79,7 @@ def request(idn, schema="rdfxml", style=None):
 def store(idn, schema="json", style=None, path="."):
     """
     | request data specified by idn in given schema and (optional) style
-    | afterwards save it to file at path
+    | afterwards save it to directory at path
     """
     url = address(idn, schema, style)
     if url is not None:
