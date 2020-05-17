@@ -17,7 +17,7 @@ PERSON = "cnp00390358"
 
 def address(idn, schema, style):
     """
-    get url of item given by idn in given schema (and optional style)
+    get url of item specified by idn in given schema and style
     """
     if schema not in SCHEMA:
         print("schema not supported!")
@@ -53,9 +53,9 @@ def request(idn, schema="rdfxml", style=None):
     +--------+---------+-------------+
     | SCHEMA | STYLE   | TYPE        |
     +========+=========+=============+
-    | rdfxml | -       |etree.Element|
+    | rdfxml | None    |etree.Element|
     +--------+---------+-------------+
-    | json   | -       |  dict       |
+    | json   | None    |  dict       |
     +--------+---------+-------------+
     | json   | jsonld  |  dict       |
     +--------+---------+-------------+
@@ -78,8 +78,8 @@ def request(idn, schema="rdfxml", style=None):
 
 def store(idn, schema="json", style=None, path="."):
     """
-    | request data specified by idn in given schema
-    | and save it to file at path
+    | request data specified by idn in given schema and (optional) style
+    | afterwards save it to file at path
     """
     url = address(idn, schema, style)
     if url is not None:
