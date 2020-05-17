@@ -39,7 +39,7 @@ class Client:
         get url of entity specified by idn in given schema
         """
         return self.URL + "/?id=" + self.DB + ":" + \
-                 self.VAR + ":" + idn + "&format=" + schema
+            self.VAR + ":" + idn + "&format=" + schema
 
     def request(self, idn, schema):
         """
