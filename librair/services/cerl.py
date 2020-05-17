@@ -48,17 +48,22 @@ def address(idn, schema, style):
 
 def request(idn, schema="rdfxml", style=None):
     """
-    retrieve data specified by idn in given schema
+    retrieve data specified by idn in given schema and (optional) style
 
-    ======  ========  ====
-    SCHEMA  STYLE     TYPE
-    ======  ========  ====
-    rdfxml  -         etree.Element
-    json    -         dict
-    json    jsonld    dict
-    txt     ttl       str
-    txt     internal  str
-    =====   ========  ======
+    +--------+---------+-------------+
+    | SCHEMA | STYLE   | TYPE        |
+    +========+=========+=============+
+    | rdfxml | -       |etree.Element|
+    +--------+---------+-------------+
+    | json   | -       |  dict       |
+    +--------+---------+-------------+
+    | json   | jsonld  |  dict       |
+    +--------+---------+-------------+
+    | txt    | ttl     |  str        |
+    +--------+---------+-------------+
+    | txt    | internal|  str        |
+    +--------+---------+-------------+
+
     """
     url = address(idn, schema, style=style)
     if url is not None:
