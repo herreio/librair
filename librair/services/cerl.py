@@ -50,14 +50,15 @@ def request(idn, schema="rdfxml", style=None):
     """
     retrieve data specified by idn in given schema
 
-    supported schemas:
-
-        SCHEMA       STYLE          TYPE
-        rdfxml       -              etree.Element
-        json         -              dict
-        json         jsonld         dict
-        txt          ttl            str
-        txt          internal       str
+    ======  ========  ====
+    SCHEMA  STYLE     TYPE
+    ======  ========  ====
+    rdfxml  -         etree.Element
+    json    -         dict
+    json    jsonld    dict
+    txt     ttl       str
+    txt     internal  str
+    =====   ========  ======
     """
     url = address(idn, schema, style=style)
     if url is not None:
@@ -72,8 +73,8 @@ def request(idn, schema="rdfxml", style=None):
 
 def store(idn, schema="json", style=None, path="."):
     """
-    request data specified by idn in given schema
-    and save it to file at path
+    | request data specified by idn in given schema
+    | and save it to file at path
     """
     url = address(idn, schema, style)
     if url is not None:
