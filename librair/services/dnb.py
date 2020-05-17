@@ -27,15 +27,15 @@ def request(idn, schema="lds"):
     """
     request data of entity specified by idn in given schema
 
-    +--------+-------------------+
-    | SCHEMA | RETURN TYPE       |
-    +========+===================+
-    |bibframe|  str              |
-    +--------+-------------------+
-    |lds     |  str              |
-    +--------+-------------------+
-    | marcxml| lxml.etree.Element|
-    +--------+-------------------+
+    +----------+--------------------+
+    | SCHEMA   | RETURN TYPE        |
+    +==========+====================+
+    | bibframe |  str               |
+    +----------+--------------------+
+    | lds      |  str               |
+    +----------+--------------------+
+    | marcxml  | lxml.etree.Element |
+    +----------+--------------------+
 
     to do:
 
@@ -56,7 +56,7 @@ def request(idn, schema="lds"):
 def store(idn, schema="lds", path="."):
     """
     | request data specified by idn in given schema
-    | afterwards save it to file at path
+    | afterwards save it to directory at path
     """
     url = address(idn, schema)
     if url is not None:
