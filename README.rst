@@ -30,6 +30,9 @@ You can simply install this package via `PyPI <https://pypi.org/project/librair/
 
     git clone https://github.com/herreio/librair.git
     cd librair
+    # create and activate virutalenv
+    utils/setup
+    source env/bin/activate
 
 
 Documentation
