@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-twine upload --repository pypi dist/* 
+twine upload --repository pypi dist/*
