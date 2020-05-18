@@ -9,7 +9,6 @@ Welcome to librair's documentation!
    refs/services
    refs/interfaces
    refs/protocols
-   refs/queries
    refs/schemas
    refs/parsers
 
