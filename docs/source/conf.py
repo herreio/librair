@@ -24,9 +24,9 @@ copyright = '2020, Donatus Herre'
 author = 'Donatus Herre'
 
 # The short X.Y version
-version = '2020.5.18'
+version = '2020.5.19'
 # The full version, including alpha/beta/rc tags
-release = '2020.5.18'
+release = '2020.5.19'
 
 
 # -- General configuration ---------------------------------------------------
@@ -112,7 +112,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Pybmandoc'
+htmlhelp_basename = 'Librairdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -139,7 +139,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Pybman.tex', 'Pybman Documentation',
+    (master_doc, 'Librair.tex', 'Librair Documentation',
      author, 'manual'),
 ]
 
@@ -149,7 +149,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pybman', 'Pybman Documentation',
+    (master_doc, 'librair', 'Librair Documentation',
      [author], 1)
 ]
 
@@ -160,8 +160,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Pybman', 'Pybman Documentation',
-     author, 'Pybman', 'One line description of project.',
+    (master_doc, 'Librair', 'Librair Documentation',
+     author, 'Librair', 'One line description of project.',
      'Miscellaneous'),
 ]
 
