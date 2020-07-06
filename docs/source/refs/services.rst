@@ -44,6 +44,14 @@ kalliope module
     :undoc-members:
     :show-inheritance:
 
+lobid module
+------------
+
+.. automodule:: librair.services.lobid
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 oclc module
 ---------------------
 

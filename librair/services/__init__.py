@@ -10,3 +10,4 @@ from . import entityfacts
 from . import oclc
 from . import seealso
 from . import kalliope
+from . import lobid
