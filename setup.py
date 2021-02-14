@@ -9,7 +9,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
     name="librair",
-    version="2021.1.30",
+    version="2021.2.14",
     author="Donatus Herre",
     author_email="pypi@herre.io",
     license="MIT",
@@ -19,6 +19,11 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     include_package_data=True,
     install_requires=required,
+    entry_points={
+      'console_scripts': [
+        'librair = librair.__main__:main',
+        ],
+    },
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Science/Research",
