@@ -7,7 +7,7 @@ Librair Vniuersal
 Introduction
 ------------
 
-This is a package (under development) for harvesting data from different library catalogs.
+This is a package for harvesting data from different library catalogs.
 
 Installation
 ------------
@@ -46,13 +46,3 @@ To build the documentation from the files found at docs:
 
     cd docs
     make html
-
-
-Usage
------
-
-Launch the Python interpreter and start by importing the necessary modules:
-
-.. code-block:: python
-
-    from librair import *
