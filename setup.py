@@ -9,11 +9,11 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
     name="librair",
-    version="2021.1.30",
+    version="2021.5.24",
     author="Donatus Herre",
     author_email="pypi@herre.io",
     license="MIT",
-    description="library retrieval client (under development)",
+    description="retrieve data from library catalogs",
     long_description=README,
     url="https://github.com/herreio/librair",
     packages=setuptools.find_packages(),
@@ -23,7 +23,6 @@ setuptools.setup(
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Science/Research",
         "Intended Audience :: Developers",
-        "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: MIT License"

@@ -24,9 +24,9 @@ copyright = '2021, Donatus Herre'
 author = 'Donatus Herre'
 
 # The short X.Y version
-version = '2021.1.30'
+version = '2021.5.24'
 # The full version, including alpha/beta/rc tags
-release = '2021.1.30'
+release = '2021.5.24'
 
 
 # -- General configuration ---------------------------------------------------
