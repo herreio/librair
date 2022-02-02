@@ -17,7 +17,7 @@ class Client:
         """
         get url for given query, size and page
         """
-        return "{0}/?q={1}&size={2}&page={3}".format(self.URL,
+        return "{0}.jsonld?q={1}&size={2}&page={3}".format(self.URL,
                                                      query, size, page)
 
     def retrieve(self, query, size=10, page=1):
@@ -64,7 +64,7 @@ class Client:
         """
         request data specified by idn
         """
-        url = "{0}/{1}/{2}".format(self.URL, "resource", idn)
+        url = "{0}/{1}.jsonld".format(self.URL, idn)
         response = http.get_request(url)
         return http.response_json(response)
 

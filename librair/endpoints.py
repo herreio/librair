@@ -7,7 +7,7 @@ UNAPI = {
 }
 
 HYDRA = {
-  "zdb": "https://www.zeitschriftendatenbank.de/api/hydra",
+  "zdb": "https://www.zeitschriftendatenbank.de/api/tit",
   "isil": "https://sigel.staatsbibliothek-berlin.de/api/hydra"
 }
 
