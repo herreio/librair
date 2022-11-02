@@ -20,13 +20,13 @@ sys.path.insert(0, os.path.abspath('../..'))
 # -- Project information -----------------------------------------------------
 
 project = 'librair'
-copyright = '2021, Donatus Herre'
+copyright = '2022, Donatus Herre'
 author = 'Donatus Herre'
 
 # The short X.Y version
-version = '2022.2.2'
+version = '2022.11.2'
 # The full version, including alpha/beta/rc tags
-release = '2022.2.2'
+release = '2022.11.2'
 
 
 # -- General configuration ---------------------------------------------------
