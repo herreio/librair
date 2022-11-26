@@ -7,7 +7,7 @@ Librair Vniuersal
 Synopsis
 --------
 
-`librair` is a Python package for harvesting data from different library catalogs. It has been developed as part of the `Dikon project <https://dikon.izea.uni-halle.de/>`_ (2019--2020) at the `Interdisciplinary Centre for European Enlightenment Studies <https://www.izea.uni-halle.de/>`_.
+``librair`` is a Python package for harvesting data from different library catalogs. It has been developed as part of the `Dikon project <https://dikon.izea.uni-halle.de/>`_ (2019--2020) at the `Interdisciplinary Centre for European Enlightenment Studies <https://www.izea.uni-halle.de/>`_.
 
 Installation
 ------------
