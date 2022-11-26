@@ -12,7 +12,7 @@ Synopsis
 Installation
 ------------
 
-You can simply install this package via `PyPI <https://pypi.org/project/librair/>`_:
+You can install this package via `PyPI <https://pypi.org/project/librair/>`_:
 
 .. code-block:: shell
 
