@@ -4,10 +4,10 @@
 Librair Vniuersal
 =================
 
-Introduction
-------------
+Synopsis
+--------
 
-This is a package for harvesting data from different library catalogs.
+`librair` is a Python package for harvesting data from different library catalogs. It has been developed as part of the `Dikon project <https://dikon.izea.uni-halle.de/>`_ (2019--2020) at the `Interdisciplinary Centre for European Enlightenment Studies <https://www.izea.uni-halle.de/>`_.
 
 Installation
 ------------
@@ -38,7 +38,7 @@ You can simply install this package via `PyPI <https://pypi.org/project/librair/
 Documentation
 -------------
 
-A minimal documentation can be found on `Read the Docs <https://librair.readthedocs.io/>`_.
+The documentation can be found on `Read the Docs <https://librair.readthedocs.io/>`_.
 
 To build the documentation from the files found at docs:
 
