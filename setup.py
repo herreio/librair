@@ -20,7 +20,6 @@ setuptools.setup(
     include_package_data=True,
     install_requires=required,
     classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Science/Research",
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",
