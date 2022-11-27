@@ -9,7 +9,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
     name="librair",
-    version="2022.11.26",
+    version="2022.11.27",
     author="Donatus Herre",
     author_email="pypi@herre.io",
     license="MIT",

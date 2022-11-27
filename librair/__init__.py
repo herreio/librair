@@ -6,7 +6,7 @@ Copyright (c) 2021–2022  Donatus Herre <git@herre.io>
 This module offers tools to harvest data from different library catalogs.
 """
 __author__ = "Donatus Herre <git@herre.io>"
-__version__ = "2022.11.26"
+__version__ = "2022.11.27"
 __license__ = "MIT"
 
 from . import interfaces
